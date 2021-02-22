@@ -23,6 +23,21 @@ h1 {
     background-color: rgb(255, 255, 255);
 }
 
+.Headertable {
+    width: 100%;
+}
+
+.Headertd {
+    width: 50%;
+}
+
+#GithubBannerImage {
+    height: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 * {
     margin: 0;
     padding: 0;
