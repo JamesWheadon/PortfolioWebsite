@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Wheadon</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
@@ -15,14 +15,50 @@
                     </h1>
                 </td>
                 <td class="Headertd">
-                    <a href="https://github.com/JamesWheadon">
+                    <a href="https://github.com/JamesWheadon" target="_blank">
                         <img id="GithubBannerImage" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Octicons-logo-github.svg" alt="Github logo">
                     </a>
                 </td>
             </tr>
         </table>
     </div>
-    <p>
-        Not really sure what to put here yet.
-    </p>
+    <div class="tab">
+        <button class="tablinks" onclick="opentab(event, 'AboutMe')" id="defaultOpen" type="button">About Me</button>
+        <button class="tablinks" onclick="opentab(event, 'PastProjects')" type="button">Past Projects</button>
+        <button class="tablinks" onclick="opentab(event, 'Interests')" type="button">Hobbies and Interests</button>
+      </div>
+    <div id="AboutMe" class="tabcontent">
+        <p>
+            Not really sure what to put here yet.
+        </p>
+    </div>
+    <div id="PastProjects" class="tabcontent">
+        <p>
+            Robots!
+        </p>
+        <iframe src="https://drive.google.com/file/d/102PaQzQsnxAH55n6oIfgLF45GRol4VOf/preview" width="640" height="480"></iframe>
+        <iframe src="https://drive.google.com/file/d/1w1JsWZXFingSsP3y-NNNEhp6B1vSpJNv/preview" width="640" height="480"></iframe>
+    </div>
+    <div id="Interests" class="tabcontent">
+        <p>
+            Sports, Travel, Coding.
+        </p>
+    </div>
+    <script>
+        document.getElementById("defaultOpen").click();
+        
+        function opentab(evt, TabName) {
+          var i, tabcontent, tablinks;
+          tabcontent = document.getElementsByClassName("tabcontent");
+          for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+          }
+          tablinks = document.getElementsByClassName("tablinks");
+          for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+          }
+          document.getElementById(TabName).style.display = "block";
+          evt.currentTarget.className += " active";
+        }
+        </script>
 </body>
