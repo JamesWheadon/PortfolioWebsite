@@ -1,7 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById("defaultOpen").click();
-})
-        
+      
 function opentab(evt, TabName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
