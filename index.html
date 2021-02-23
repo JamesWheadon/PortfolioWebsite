@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Wheadon</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
 </head>
 <body>
     <div class="Banner">
@@ -44,21 +45,4 @@
             Sports, Travel, Coding.
         </p>
     </div>
-    <script>
-        document.getElementById("defaultOpen").click();
-        
-        function opentab(evt, TabName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(TabName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-        </script>
 </body>
