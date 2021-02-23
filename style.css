@@ -21,14 +21,16 @@ h1 {
     width: 100%;
     margin: 0;
     background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
 }
 
-.Headertable {
-    width: 100%;
+#MyName {
+  grid-column: 1 / 2;
 }
 
-.Headertd {
-    width: 50%;
+#GithubBannerImage{
+  grid-column: 2 / 3;
 }
 
 #GithubBannerImage {
@@ -45,6 +47,7 @@ h1 {
     outline: 0;
     font-size: 100%;
     vertical-align: baseline;
+    box-sizing: border-box;
 }
 
 .tab {
