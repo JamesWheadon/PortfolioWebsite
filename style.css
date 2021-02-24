@@ -4,78 +4,79 @@ html {
 }
 
 body {
-    background-color: rgb(221, 221, 221);
-    color: rgb(0, 0, 0);
-    height: 100%;
-    margin: 0;
+  background-color: rgb(221, 221, 221);
+  color: rgb(0, 0, 0);
+  height: 100%;
+  margin: 0;
 }
 
 h1 {
-    text-align: center;
-    font-size: 72px;
-    color: rgb(0, 140, 255);
+  text-align: center;
+  font-size: 72px;
+  color: rgb(0, 140, 255);
 }
 
 .Banner {
-    padding: 10px 0;
-    width: 100%;
-    margin: 0;
-    background-color: rgb(255, 255, 255);
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+  padding: 10px 0;
+  width: 100%;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  position: relative;
 }
 
 #MyName {
   grid-column: 1 / 2;
+  height: 100px;
 }
 
 #GithubBannerImage{
   grid-column: 2 / 3;
-  margin: auto;
-}
-
-#GithubBannerImage {
-    height: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  height: 50px;
+  display: block;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 
 .tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
-  }
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
   
   /* Style the buttons inside the tab */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    width: 25%;
-  }
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+  width: 25%;
+}
   
   /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
+.tab button:hover {
+  background-color: #ddd;
+}
   
   /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: #ccc;
-  }
+.tab button.active {
+  background-color: #ccc;
+}
