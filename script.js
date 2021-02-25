@@ -14,3 +14,7 @@ function showSlides() {
         slideIndex = 0
     }
 }
+
+function openNav() {
+    document.getElementById("SidenavBar").style.width = "250px";
+}
