@@ -1,10 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+:root {
+  --NameColour: rgb(255, 255, 255);
+  --BannerColour: rgb(0, 0, 0);
+  --BackgroundColour: rgb(235, 235, 235);
+  --PrimaryColour: rgba(0, 0, 0, 1);
+  --SecondaryColour: rgba(0, 0, 0, 1);
+  --TertiaryColour: rgba(134, 70, 70, 1);
+}
+
 html {
   height: 100%;
   margin: 0;
 }
 
 body {
-  background-color: rgb(221, 221, 221);
+  background-color: var(--BackgroundColour);
   color: rgb(0, 0, 0);
   height: 100%;
   margin: 0;
@@ -13,33 +24,15 @@ body {
 h1 {
   text-align: center;
   font-size: 72px;
-  color: rgb(0, 140, 255);
+  color: var(--NameColour);
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 .Banner {
-  padding: 10px 0;
   width: 100%;
   margin: 0;
-  background-color: rgb(255, 255, 255);
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  background-color: var(--BannerColour);
   position: relative;
-}
-
-#MyName {
-  grid-column: 1 / 2;
-  height: 100px;
-}
-
-#GithubBannerImage{
-  grid-column: 2 / 3;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  height: 50px;
-  display: block;
 }
 
 * {
@@ -52,31 +45,34 @@ h1 {
   box-sizing: border-box;
 }
 
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #f1f1f1;
+.mySlides {
+  display: none;
 }
-  
-  /* Style the buttons inside the tab */
-.tab button {
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 16px;
-  transition: 0.3s;
-  font-size: 17px;
-  width: 25%;
+
+img {
+  vertical-align: middle;
 }
-  
-  /* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ddd;
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
 }
-  
-  /* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ccc;
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
 }
