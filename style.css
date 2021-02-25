@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 :root {
-  --NameColour: rgb(255, 255, 255);
+  --NameColour: rgb(0, 0, 0);
   --BannerColour: rgb(0, 0, 0);
-  --BackgroundColour: rgb(235, 235, 235);
+  --BackgroundColour: rgb(224, 224, 224);
+  --ContentColour: rgb(240, 240, 240);
   --PrimaryColour: rgba(0, 0, 0, 1);
   --SecondaryColour: rgba(0, 0, 0, 1);
   --TertiaryColour: rgba(134, 70, 70, 1);
@@ -19,6 +20,7 @@ body {
   color: rgb(0, 0, 0);
   height: 100%;
   margin: 0;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 h1 {
@@ -75,4 +77,91 @@ img {
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+.ProjectsContainer {
+  padding-top: 50px;
+  /* background-color: var(--ContentColour); */
+  display: grid;
+  width: 1200px;
+  grid-template-areas:
+  "header header media"
+  "content content media"
+  "header header media"
+  "content content media";
+  grid-template-rows: 60px auto 60px auto 60px auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1000px){
+  .ProjectsContainer {
+    width: 100%;
+  }
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.FootballerTitle {
+  grid-area: header;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.FootballerSummary {
+  grid-area: content;
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.FootballerMedia {
+  grid-area: media;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  width: 640px;
+  height: 360px;
+}
+
+.LineBotTitle {
+  grid-area: header;
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.LineBotSummary {
+  grid-area: content;
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+
+.LineBotMedia {
+  grid-area: media;
+  grid-column: 3;
+  grid-row: 3 / span 2;
+  width: 640px;
+  height: 360px;
+}
+
+.FourYPTitle {
+  grid-area: header;
+  grid-column: 1 / span 2;
+  grid-row: 5;
+}
+
+.FourYPSummary {
+  grid-area: content;
+  grid-column: 1 / span 2;
+  grid-row: 6;
+}
+
+.FourYPMedia {
+  grid-area: media;
+  grid-column: 3;
+  grid-row: 5 / span 2;
+  width: 640px;
+  height: 360px;
 }
