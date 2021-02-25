@@ -7,58 +7,22 @@
 </head>
 <body>
     <div class="Banner">
-        <table class="Headertable">
-            <tr>
-                <td class="Headertd">
-                    <h1>
-                        James Wheadon
-                    </h1>
-                </td>
-                <td class="Headertd">
-                    <a href="https://github.com/JamesWheadon" target="_blank">
-                        <img id="GithubBannerImage" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Octicons-logo-github.svg" alt="Github logo">
-                    </a>
-                </td>
-            </tr>
-        </table>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="https://drive.google.com/uc?export=view&id=1ms58MZ7Zc_WUE7ABCv6pLUp7rK5v5v8n" width="100%"/>
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="https://drive.google.com/uc?export=view&id=1qY5jzTGCpb7Zc-XAeYCGhUhwoV_eRFqW" width="100%"/>
+            </div>
+            
+            <div class="mySlides fade">
+                <img src="https://drive.google.com/uc?export=view&id=13rLeL_oKgEUO3AIrad0cHRO-TYFYEd2F" width="100%"/>
+            </div>
+        </div>
     </div>
-    <div class="tab">
-        <button class="tablinks" onclick="opentab(event, 'AboutMe')" id="defaultOpen" type="button">About Me</button>
-        <button class="tablinks" onclick="opentab(event, 'PastProjects')" type="button">Past Projects</button>
-        <button class="tablinks" onclick="opentab(event, 'Interests')" type="button">Hobbies and Interests</button>
-      </div>
-    <div id="AboutMe" class="tabcontent">
         <p>
             Not really sure what to put here yet.
         </p>
-    </div>
-    <div id="PastProjects" class="tabcontent">
-        <p>
-            Robots!
-        </p>
-        <iframe src="https://drive.google.com/file/d/102PaQzQsnxAH55n6oIfgLF45GRol4VOf/preview" width="640" height="480"></iframe>
-        <iframe src="https://drive.google.com/file/d/1w1JsWZXFingSsP3y-NNNEhp6B1vSpJNv/preview" width="640" height="480"></iframe>
-    </div>
-    <div id="Interests" class="tabcontent">
-        <p>
-            Sports, Travel, Coding.
-        </p>
-    </div>
-    <script>
-        document.getElementById("defaultOpen").click();
-        
-        function opentab(evt, TabName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(TabName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-        </script>
+    <script src="script.js"></script>
 </body>

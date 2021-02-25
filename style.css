@@ -1,77 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+:root {
+  --NameColour: rgb(0, 0, 0);
+  --BannerColour: rgb(0, 0, 0);
+  --BackgroundColour: rgb(224, 224, 224);
+  --ContentColour: rgb(240, 240, 240);
+  --PrimaryColour: rgba(0, 0, 0, 1);
+  --SecondaryColour: rgba(0, 0, 0, 1);
+  --TertiaryColour: rgba(134, 70, 70, 1);
+}
+
 html {
   height: 100%;
   margin: 0;
 }
 
 body {
-    background-color: rgb(221, 221, 221);
-    color: rgb(0, 0, 0);
-    height: 100%;
-    margin: 0;
+  background-color: var(--BackgroundColour);
+  color: rgb(0, 0, 0);
+  height: 100%;
+  margin: 0;
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 h1 {
-    text-align: center;
-    font-size: 72px;
-    color: rgb(0, 140, 255);
+  text-align: center;
+  font-size: 72px;
+  color: var(--NameColour);
+  font-family: 'Nanum Gothic', sans-serif;
 }
 
 .Banner {
-    padding: 10px 0;
-    width: 100%;
-    margin: 0;
-    background-color: rgb(255, 255, 255);
-}
-
-.Headertable {
-    width: 100%;
-}
-
-.Headertd {
-    width: 50%;
-}
-
-#GithubBannerImage {
-    height: 50px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100%;
+  margin: 0;
+  background-color: var(--BannerColour);
+  position: relative;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  box-sizing: border-box;
 }
 
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+.mySlides {
+  display: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+.ProjectsContainer {
+  padding-top: 50px;
+  /* background-color: var(--ContentColour); */
+  display: grid;
+  width: 1200px;
+  grid-template-areas:
+  "header header media"
+  "content content media"
+  "header header media"
+  "content content media";
+  grid-template-rows: 60px auto 60px auto 60px auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1000px){
+  .ProjectsContainer {
+    width: 100%;
   }
-  
-  /* Style the buttons inside the tab */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-    width: 25%;
-  }
-  
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: #ccc;
-  }
+}
+
+h2 {
+  font-size: 36px;
+}
+
+.FootballerTitle {
+  grid-area: header;
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.FootballerSummary {
+  grid-area: content;
+  grid-column: 1 / span 2;
+  grid-row: 2;
+}
+
+.FootballerMedia {
+  grid-area: media;
+  grid-column: 3;
+  grid-row: 1 / span 2;
+  width: 640px;
+  height: 360px;
+}
+
+.LineBotTitle {
+  grid-area: header;
+  grid-column: 1 / span 2;
+  grid-row: 3;
+}
+
+.LineBotSummary {
+  grid-area: content;
+  grid-column: 1 / span 2;
+  grid-row: 4;
+}
+
+.LineBotMedia {
+  grid-area: media;
+  grid-column: 3;
+  grid-row: 3 / span 2;
+  width: 640px;
+  height: 360px;
+}
+
+.FourYPTitle {
+  grid-area: header;
+  grid-column: 1 / span 2;
+  grid-row: 5;
+}
+
+.FourYPSummary {
+  grid-area: content;
+  grid-column: 1 / span 2;
+  grid-row: 6;
+}
+
+.FourYPMedia {
+  grid-area: media;
+  grid-column: 3;
+  grid-row: 5 / span 2;
+  width: 640px;
+  height: 360px;
+}
