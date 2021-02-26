@@ -79,89 +79,32 @@ img {
   to {opacity: 1}
 }
 
-.ProjectsContainer {
-  padding-top: 50px;
-  /* background-color: var(--ContentColour); */
-  display: grid;
-  width: 1200px;
-  grid-template-areas:
-  "header header media"
-  "content content media"
-  "header header media"
-  "content content media";
-  grid-template-rows: 60px auto 60px auto 60px auto;
-  grid-template-columns: repeat(3, 1fr);
-  grid-row-gap: 20px;
-  grid-column-gap: 10px;
-  margin: auto;
-}
-
-@media only screen and (max-width: 1000px){
-  .ProjectsContainer {
-    width: 100%;
-  }
-}
 
 h2 {
   font-size: 36px;
 }
 
-.FootballerTitle {
-  grid-area: header;
-  grid-column: 1 / span 2;
-  grid-row: 1;
+.Sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  background-color: black;
+  overflow-x: hidden;
 }
 
-.FootballerSummary {
-  grid-area: content;
-  grid-column: 1 / span 2;
-  grid-row: 2;
+.Sidenav a {
+  padding: 8px 8px 8px 32px;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  text-decoration: none;
 }
 
-.FootballerMedia {
-  grid-area: media;
-  grid-column: 3;
-  grid-row: 1 / span 2;
-  width: 640px;
-  height: 360px;
-}
-
-.LineBotTitle {
-  grid-area: header;
-  grid-column: 1 / span 2;
-  grid-row: 3;
-}
-
-.LineBotSummary {
-  grid-area: content;
-  grid-column: 1 / span 2;
-  grid-row: 4;
-}
-
-.LineBotMedia {
-  grid-area: media;
-  grid-column: 3;
-  grid-row: 3 / span 2;
-  width: 640px;
-  height: 360px;
-}
-
-.FourYPTitle {
-  grid-area: header;
-  grid-column: 1 / span 2;
-  grid-row: 5;
-}
-
-.FourYPSummary {
-  grid-area: content;
-  grid-column: 1 / span 2;
-  grid-row: 6;
-}
-
-.FourYPMedia {
-  grid-area: media;
-  grid-column: 3;
-  grid-row: 5 / span 2;
-  width: 640px;
-  height: 360px;
+.OpenSidebar {
+  cursor: pointer;
+  font-size: 30px;
 }
