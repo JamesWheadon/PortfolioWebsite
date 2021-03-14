@@ -23,18 +23,15 @@ body {
   font-family: 'Nanum Gothic', sans-serif;
 }
 
+main {
+  margin-top: calc(100vw / 2.5);
+}
+
 h1 {
   text-align: center;
   font-size: 72px;
   color: var(--NameColour);
   font-family: 'Nanum Gothic', sans-serif;
-}
-
-.Banner {
-  width: 100%;
-  margin: 0;
-  background-color: var(--BannerColour);
-  position: relative;
 }
 
 * {
@@ -48,37 +45,18 @@ h1 {
 }
 
 .mySlides {
-  display: none;
+  transition: opacity .5s ease-in;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-img {
-  vertical-align: middle;
-}
+.mySlides + .mySlides { opacity: 0; }
 
-/* Slideshow container */
-.slideshow-container {
+.slideshowContainer {
   max-width: 100%;
-  position: relative;
 }
-
-/* Fading animation */
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-
 
 h2 {
   font-size: 36px;
@@ -105,6 +83,14 @@ h2 {
 }
 
 .OpenSidebar {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 45px;
+  width: 50px;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.25);
   cursor: pointer;
   font-size: 30px;
 }

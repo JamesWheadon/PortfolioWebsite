@@ -6,28 +6,21 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <div class="Banner">
-        <div class="slideshow-container">
-            <div class="mySlides fade">
-                <img src="https://drive.google.com/uc?export=view&id=1ms58MZ7Zc_WUE7ABCv6pLUp7rK5v5v8n" width="100%"/>
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="https://drive.google.com/uc?export=view&id=1qY5jzTGCpb7Zc-XAeYCGhUhwoV_eRFqW" width="100%"/>
-            </div>
-            
-            <div class="mySlides fade">
-                <img src="https://drive.google.com/uc?export=view&id=13rLeL_oKgEUO3AIrad0cHRO-TYFYEd2F" width="100%"/>
-            </div>
+    <div class="slideshowContainer">
+        <img class="mySlides" src="./images/CampLakeBanner.png"/>
+        <img class="mySlides" src="./images/WalkingMechanism.png"/>
+        <img class="mySlides" src="./images/MountainsCropped.png"/>
+    </div>
+    <main>
+        <div id="SidenavBar" class="Sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Homepage</a>
+            <a href="PastProjects.html">Past Projects</a>
         </div>
-    </div>
-    <div id="SidenavBar" class="Sidenav">
-        <a href="#">Homepage</a>
-        <a href="PastProjects.html">Past Projects</a>
-    </div>
-    <span class="OpenSidebar" onclick="openNav()">open</span>
+        <span class="OpenSidebar" onclick="openNav()">&#9776;</span>
         <p>
             Not really sure what to put here yet.
         </p>
+    </main>
     <script src="script.js"></script>
 </body>
