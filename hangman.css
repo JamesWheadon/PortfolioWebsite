@@ -14,6 +14,7 @@
 
 #hangmanBase {
     position: absolute;
+    display: none;
     top: 500px;
     left: 50px;
     width: 300px;
@@ -23,11 +24,16 @@
 
 #hangmanStand {
     position: absolute;
+    display: none;
     top: 100px;
     left: 100px;
     width: 20px;
     height: 400px;
     background-color: var(--frameColour);
+}
+
+#hangmanFrame {
+    display: none;
 }
 
 #hangmanCross {
@@ -51,11 +57,16 @@
 
 #hangmanNoose {
     position: absolute;
+    display: none;
     top: 100px;
     left: 375px;
     width: 10px;
     height: 50px;
     background-color: var(--ropeColour);
+}
+
+#hangmanHead {
+    display: none;
 }
 
 #hangmanOuterHead {
@@ -80,11 +91,16 @@
 
 #hangmanBody {
     position: absolute;
+    display: none;
     top: 215px;
     left: 370px;
     width: 20px;
     height: 130px;
     background-color: var(--personColour);
+}
+
+#hangmanArms {
+    display: none;
 }
 
 #leftArm {
@@ -105,6 +121,10 @@
     height: 90px;
     transform: rotate(-30deg);
     background-color: var(--personColour);
+}
+
+#hangmanLegs {
+    display: none;
 }
 
 #leftLeg {
@@ -135,4 +155,5 @@
 
 #hangmanGuess {
     width: 50px;
+    text-align: center;
 }
