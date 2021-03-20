@@ -1,7 +1,6 @@
-let wordGuessed;
 let wrongGuesses;
 let word;
-let guessedLetters = [];
+let guessedLetters;
 const alphabet = "abcdefghijklmnopqrstuvwxyz";
 const guessInput = document.getElementById('hangmanGuess');
 
@@ -12,8 +11,13 @@ async function hangmanWord() {
 }
 
 function playHangman() {
-    wordGuessed = false;
     wrongGuesses = 0;
+    guessedLetters = [];
+    Array.prototype.forEach.call(document.getElementsByClassName("hangmanDrawing"), element => {
+        element.style.display = "none";
+    });
+    document.getElementById('hangmanBlanks').textContent = "";
+    document.getElementById("hangmanCover").style.display = "none";
     let guessWord = hangmanWord();
 
     guessWord.then(generatedWord => {
@@ -29,6 +33,7 @@ function letterGuess() {
     if (alphabet.includes(guess) && !guessedLetters.includes(guess)) {
         guessedLetters.push(guess);
         if (word.includes(guess)) {
+            let solved = true;
             document.getElementById('hangmanBlanks').textContent = '';
             for(let i = 0; i < word.length; i++) {
                 if (guessedLetters.includes(word[i])) {
@@ -36,7 +41,11 @@ function letterGuess() {
                 }
                 else {
                     document.getElementById('hangmanBlanks').textContent += '_ ';
+                    solved = false;
                 }
+            }
+            if (solved) {
+                hangmanWon();
             }
         }
         else {
@@ -78,8 +87,17 @@ function drawHangman() {
             break;
         case 8:
             document.getElementById('hangmanLegs').style.display = 'block';
+            hangmanLost();
             break;
     }
 }
 
-playHangman()
+function hangmanWon() {
+    document.getElementById("hangmanMessage").textContent = `Correct, the word was ${word}`;
+    document.getElementById("hangmanCover").style.display = "flex";
+}
+
+function hangmanLost() {
+    document.getElementById("hangmanMessage").textContent = `You lose, the word was ${word}`;
+    document.getElementById("hangmanCover").style.display = "flex";
+}

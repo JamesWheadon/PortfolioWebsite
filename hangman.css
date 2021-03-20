@@ -2,14 +2,13 @@
     --frameColour: rgb(136, 72, 0);
     --ropeColour: rgb(255, 187, 0);
     --personColour: rgb(0, 0, 0);
-  }
+}
 
 #hangman {
     position: relative;
     height: 600px;
     width: 500px;
     margin: auto;
-    border: 2px dotted black;
 }
 
 #hangmanBase {
@@ -156,4 +155,46 @@
 #hangmanGuess {
     width: 50px;
     text-align: center;
+}
+
+#hangmanBlanks {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+#hangmanCover {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: -600px;
+    height: 600px;
+    width: 500px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hangmanMessage {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+}
+
+.playAgain {
+    background-color: rgb(170, 170, 170);
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+}
+
+.playAgain:focus {
+    outline: none;
+    box-shadow: none;
 }

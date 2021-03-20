@@ -9,31 +9,37 @@
 </head>
 <body>
     <h1>So I'm very competitive. Games nights are great fun, if I win</h1>
-    <section id="hangman">
-        <div id="hangmanBase"></div>
-        <div id="hangmanStand"></div>
-        <div id="hangmanFrame">
-            <div id="hangmanCross"></div>
-            <div id="hangmanBrace"></div>
+    <section>
+        <div id="hangman">
+            <div class="hangmanDrawing" id="hangmanBase"></div>
+            <div class="hangmanDrawing" id="hangmanStand"></div>
+            <div class="hangmanDrawing" id="hangmanFrame">
+                <div id="hangmanCross"></div>
+                <div id="hangmanBrace"></div>
+            </div>
+            <div class="hangmanDrawing" id="hangmanNoose"></div>
+            <div class="hangmanDrawing" id="hangmanHead">
+                <div id="hangmanOuterHead"></div>
+                <div id="hangmanInnerHead"></div>
+            </div>
+            <div class="hangmanDrawing" id="hangmanBody"></div>
+            <div class="hangmanDrawing" id="hangmanArms">
+                <div id="leftArm"></div>
+                <div id="rightArm"></div>
+            </div>
+            <div class="hangmanDrawing" id="hangmanLegs">
+                <div id="leftLeg"></div>
+                <div id="rightLeg"></div>
+            </div>
+            <h4 id="hangmanBlanks"></h4>
+            <div id="hangmanInput">
+                <label for="hangmanGuess">Guess a letter:</label>
+                <input type="text" id="hangmanGuess" name="hangmanGuess">
+            </div>
         </div>
-        <div id="hangmanNoose"></div>
-        <div id="hangmanHead">
-            <div id="hangmanOuterHead"></div>
-            <div id="hangmanInnerHead"></div>
-        </div>
-        <div id="hangmanBody"></div>
-        <div id="hangmanArms">
-            <div id="leftArm"></div>
-            <div id="rightArm"></div>
-        </div>
-        <div id="hangmanLegs">
-            <div id="leftLeg"></div>
-            <div id="rightLeg"></div>
-        </div>
-        <h4 id="hangmanBlanks"></h4>
-        <div id="hangmanInput">
-            <label for="hangmanGuess">Guess a letter:</label>
-            <input type="text" id="hangmanGuess" name="hangmanGuess">
+        <div id="hangmanCover">
+            <h2 id="hangmanMessage"></h2>
+            <button class="playAgain" type="button" onclick="playHangman()">Play Hangman</button>
         </div>
     </section>
 </body>
