@@ -89,6 +89,8 @@ function drawHangman() {
             document.getElementById('hangmanLegs').style.display = 'block';
             hangmanLost();
             break;
+        default:
+            break;
     }
 }
 
@@ -100,4 +102,5 @@ function hangmanWon() {
 function hangmanLost() {
     document.getElementById("hangmanMessage").textContent = `You lose, the word was ${word}`;
     document.getElementById("hangmanCover").style.display = "flex";
+    document.getElementById("hangmanAni").style.animationName = "hangmanRotate";
 }

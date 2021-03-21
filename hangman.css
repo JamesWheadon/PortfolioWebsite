@@ -54,6 +54,21 @@
     background-color: var(--frameColour);
 }
 
+#hangmanAni {
+    transform-origin: 380px 100px;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes hangmanRotate {
+    0%   {transform: rotate(0deg);}
+    25%  {transform: rotate(5deg);}
+    50%  {transform: rotate(0deg);}
+    75%  {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+
 #hangmanNoose {
     position: absolute;
     display: none;
