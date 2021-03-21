@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="hangman.css" rel="stylesheet" type="text/css" />
+    <script defer src="hangman.js"></script>
+</head>
+<body>
+    <h1>So I'm very competitive. Games nights are great fun, if I win</h1>
+    <section>
+        <div id="hangman">
+            <div class="hangmanDrawing" id="hangmanBase"></div>
+            <div class="hangmanDrawing" id="hangmanStand"></div>
+            <div class="hangmanDrawing" id="hangmanFrame">
+                <div id="hangmanCross"></div>
+                <div id="hangmanBrace"></div>
+            </div>
+            <div id="hangmanAni">
+                <div class="hangmanDrawing" id="hangmanNoose"></div>
+                <div class="hangmanDrawing" id="hangmanHead">
+                    <div id="hangmanOuterHead"></div>
+                    <div id="hangmanInnerHead"></div>
+                </div>
+                <div class="hangmanDrawing" id="hangmanBody"></div>
+                <div class="hangmanDrawing" id="hangmanArms">
+                    <div id="leftArm"></div>
+                    <div id="rightArm"></div>
+                </div>
+                <div class="hangmanDrawing" id="hangmanLegs">
+                    <div id="leftLeg"></div>
+                    <div id="rightLeg"></div>
+                </div>
+            </div>
+            <h4 id="wrongGuesses"></h4>
+            <h4 id="hangmanBlanks"></h4>
+            <div id="hangmanInput">
+                <label for="hangmanGuess">Guess a letter:</label>
+                <input type="text" id="hangmanGuess" name="hangmanGuess">
+            </div>
+        </div>
+        <div id="hangmanCover">
+            <h2 id="hangmanMessage"></h2>
+            <button class="playAgain" type="button" onclick="playHangman()">Play Hangman</button>
+        </div>
+    </section>
+</body>

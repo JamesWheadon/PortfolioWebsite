@@ -1,4 +1,4 @@
-.ProjectsContainer {
+#ProjectsContainer {
     padding-top: 50px;
     /* background-color: var(--ContentColour); */
     display: grid;
@@ -16,24 +16,24 @@
 }
   
   @media only screen and (max-width: 1000px){
-    .ProjectsContainer {
+    #ProjectsContainer {
       width: 100%;
     }
   }
   
-  .FootballerTitle {
+  #FootballerTitle {
     grid-area: header;
     grid-column: 1 / span 2;
     grid-row: 1;
   }
   
-  .FootballerSummary {
+  #FootballerSummary {
     grid-area: content;
     grid-column: 1 / span 2;
     grid-row: 2;
   }
   
-  .FootballerMedia {
+  #FootballerMedia {
     grid-area: media;
     grid-column: 3;
     grid-row: 1 / span 2;
@@ -41,19 +41,19 @@
     height: 360px;
   }
   
-  .LineBotTitle {
+  #LineBotTitle {
     grid-area: header;
     grid-column: 1 / span 2;
     grid-row: 3;
   }
   
-  .LineBotSummary {
+  #LineBotSummary {
     grid-area: content;
     grid-column: 1 / span 2;
     grid-row: 4;
   }
   
-  .LineBotMedia {
+  #LineBotMedia {
     grid-area: media;
     grid-column: 3;
     grid-row: 3 / span 2;
@@ -61,19 +61,19 @@
     height: 360px;
   }
   
-  .FourYPTitle {
+  #FourYPTitle {
     grid-area: header;
     grid-column: 1 / span 2;
     grid-row: 5;
   }
   
-  .FourYPSummary {
+  #FourYPSummary {
     grid-area: content;
     grid-column: 1 / span 2;
     grid-row: 6;
   }
   
-  .FourYPMedia {
+  #FourYPMedia {
     grid-area: media;
     grid-column: 3;
     grid-row: 5 / span 2;

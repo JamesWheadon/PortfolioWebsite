@@ -1,0 +1,268 @@
+:root {
+    --frameColour: rgb(136, 72, 0);
+    --ropeColour: rgb(255, 187, 0);
+    --personColour: rgb(0, 0, 0);
+}
+
+#hangman {
+    position: relative;
+    height: 600px;
+    width: 500px;
+    margin: auto;
+}
+
+#hangmanBase {
+    position: absolute;
+    display: none;
+    top: 450px;
+    left: 50px;
+    width: 300px;
+    height: 20px;
+    background-color: var(--frameColour);
+}
+
+#hangmanStand {
+    position: absolute;
+    display: none;
+    top: 50px;
+    left: 100px;
+    width: 20px;
+    height: 400px;
+    background-color: var(--frameColour);
+}
+
+#hangmanFrame {
+    display: none;
+}
+
+#hangmanCross {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 300px;
+    height: 20px;
+    background-color: var(--frameColour);
+}
+
+#hangmanBrace {
+    position: absolute;
+    top: 75px;
+    left: 100px;
+    width: 75px;
+    height: 20px;
+    transform: rotate(-45deg);
+    background-color: var(--frameColour);
+}
+
+#hangmanAni {
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    transform-origin: top center;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    height: 400px;
+    width: 150px;
+}
+
+@keyframes hangmanRotate {
+    0%   {transform: rotate(0deg);}
+    12.5%  {transform: rotate(5deg);}
+    37.5%  {transform: rotate(-5deg);}
+    62.5%  {transform: rotate(5deg);}
+    87.5%  {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes hangmanCelebrate {
+    0%   {left: 300px; top: 50px;}
+    20%  {left: 175px; top: 111.5px;}
+    30%  {left: 175px; top: 36.5px;}
+    40%  {left: 175px; top: 111.5px;}
+    50%  {left: 175px; top: 36.5px;}
+    60%  {left: 175px; top: 111.5px;}
+    70%  {left: 175px; top: 36.5px;}
+    80%  {left: 175px; top: 111.5px;}
+    90%  {left: 175px; top: 36.5px;}
+    100%  {left: 175px; top: 111.5px;}
+}
+
+#hangmanNoose {
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: 75px;
+    width: 10px;
+    height: 50px;
+    background-color: var(--ropeColour);
+}
+
+#hangmanHead {
+    display: none;
+}
+
+#hangmanOuterHead {
+    position: absolute;
+    top: 50px;
+    left: 45px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--personColour);
+}
+
+#hangmanInnerHead {
+    position: absolute;
+    top: 60px;
+    left: 55px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#hangmanBody {
+    position: absolute;
+    display: none;
+    top: 115px;
+    left: 70px;
+    width: 20px;
+    height: 130px;
+    background-color: var(--personColour);
+}
+
+#hangmanArms {
+    display: none;
+}
+
+#leftArm {
+    position: absolute;
+    top: 130px;
+    left: 70px;
+    width: 10px;
+    height: 90px;
+    transform: rotate(30deg);
+    background-color: var(--personColour);
+    transform-origin: top center;
+    animation-duration: 2.4s;
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    animation-delay: 0.8s;
+}
+
+#rightArm {
+    position: absolute;
+    top: 130px;
+    left: 80px;
+    width: 10px;
+    height: 90px;
+    transform: rotate(-30deg);
+    background-color: var(--personColour);
+    transform-origin: top center;
+    animation-duration: 2.4s;
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    animation-delay: 0.8s;
+}
+
+@keyframes leftArmCelebrate {
+    0%   {transform: rotate(30deg);}
+    50%  {transform: rotate(150deg);}
+    100% {transform: rotate(30deg);}
+}
+
+@keyframes rightArmCelebrate {
+    0%   {transform: rotate(-30deg);}
+    50%  {transform: rotate(-150deg);}
+    100% {transform: rotate(-30deg);}
+}
+
+#hangmanLegs {
+    display: none;
+}
+
+#leftLeg {
+    position: absolute;
+    top: 230px;
+    left: 45px;
+    width: 15px;
+    height: 120px;
+    transform: rotate(30deg);
+    background-color: var(--personColour);
+}
+
+#rightLeg {
+    position: absolute;
+    top: 230px;
+    left: 100px;
+    width: 15px;
+    height: 120px;
+    transform: rotate(-30deg);
+    background-color: var(--personColour);
+}
+
+#hangmanInput {
+    position: absolute;
+    bottom: 20px;
+    left: 168px;
+}
+
+#hangmanGuess {
+    width: 50px;
+    text-align: center;
+}
+
+#hangmanBlanks {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+#wrongGuesses {
+    position: absolute;
+    bottom: 80px;
+    text-align: center;
+    width: 100%;
+}
+
+.wrongGuess {
+    text-decoration: line-through;
+}
+
+#hangmanCover {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: -600px;
+    height: 600px;
+    width: 500px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hangmanMessage {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.playAgain {
+    background-color: rgb(170, 170, 170);
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+}
+
+.playAgain:focus {
+    outline: none;
+    box-shadow: none;
+}
