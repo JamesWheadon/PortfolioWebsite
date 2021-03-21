@@ -14,7 +14,11 @@ function playHangman() {
     wrongGuesses = 0;
     guessedLetters = [];
     document.getElementById("hangmanAni").style.animationName = "";
+    document.getElementById("leftArm").style.animationName = "";
+    document.getElementById("rightArm").style.animationName = "";
     document.getElementById("wrongGuesses").innerHTML = "";
+    document.getElementById("hangmanAni").style.left = "300px";
+    document.getElementById("hangmanAni").style.top = "50px";
     Array.prototype.forEach.call(document.getElementsByClassName("hangmanDrawing"), element => {
         element.style.display = "none";
     });
@@ -99,6 +103,15 @@ function drawHangman() {
 function hangmanWon() {
     document.getElementById("hangmanMessage").textContent = `Correct, the word was ${word}`;
     document.getElementById("hangmanCover").style.display = "flex";
+    Array.prototype.forEach.call(document.getElementsByClassName("hangmanDrawing"), element => {
+        element.style.display = "block";
+    });
+    document.getElementById('hangmanNoose').style.display = 'none';
+    document.getElementById("hangmanAni").style.animationName = "hangmanCelebrate";
+    document.getElementById("hangmanAni").style.left = "175px";
+    document.getElementById("hangmanAni").style.top = "111.5px";
+    document.getElementById("leftArm").style.animationName = "leftArmCelebrate";
+    document.getElementById("rightArm").style.animationName = "rightArmCelebrate";
 }
 
 function hangmanLost() {

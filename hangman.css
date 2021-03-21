@@ -75,6 +75,19 @@
     100% {transform: rotate(0deg);}
 }
 
+@keyframes hangmanCelebrate {
+    0%   {left: 300px; top: 50px;}
+    20%  {left: 175px; top: 111.5px;}
+    30%  {left: 175px; top: 36.5px;}
+    40%  {left: 175px; top: 111.5px;}
+    50%  {left: 175px; top: 36.5px;}
+    60%  {left: 175px; top: 111.5px;}
+    70%  {left: 175px; top: 36.5px;}
+    80%  {left: 175px; top: 111.5px;}
+    90%  {left: 175px; top: 36.5px;}
+    100%  {left: 175px; top: 111.5px;}
+}
+
 #hangmanNoose {
     position: absolute;
     display: none;
@@ -126,21 +139,43 @@
 #leftArm {
     position: absolute;
     top: 130px;
-    left: 45px;
+    left: 70px;
     width: 10px;
     height: 90px;
     transform: rotate(30deg);
     background-color: var(--personColour);
+    transform-origin: top center;
+    animation-duration: 2.4s;
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    animation-delay: 0.8s;
 }
 
 #rightArm {
     position: absolute;
     top: 130px;
-    left: 105px;
+    left: 80px;
     width: 10px;
     height: 90px;
     transform: rotate(-30deg);
     background-color: var(--personColour);
+    transform-origin: top center;
+    animation-duration: 2.4s;
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    animation-delay: 0.8s;
+}
+
+@keyframes leftArmCelebrate {
+    0%   {transform: rotate(30deg);}
+    50%  {transform: rotate(150deg);}
+    100% {transform: rotate(30deg);}
+}
+
+@keyframes rightArmCelebrate {
+    0%   {transform: rotate(-30deg);}
+    50%  {transform: rotate(-150deg);}
+    100% {transform: rotate(-30deg);}
 }
 
 #hangmanLegs {
