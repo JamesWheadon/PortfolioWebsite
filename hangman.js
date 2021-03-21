@@ -13,6 +13,8 @@ async function hangmanWord() {
 function playHangman() {
     wrongGuesses = 0;
     guessedLetters = [];
+    document.getElementById("hangmanAni").style.animationName = "";
+    document.getElementById("wrongGuesses").innerHTML = "";
     Array.prototype.forEach.call(document.getElementsByClassName("hangmanDrawing"), element => {
         element.style.display = "none";
     });
@@ -37,7 +39,7 @@ function letterGuess() {
             document.getElementById('hangmanBlanks').textContent = '';
             for(let i = 0; i < word.length; i++) {
                 if (guessedLetters.includes(word[i])) {
-                    document.getElementById('hangmanBlanks').textContent += `${word[i]} `;
+                    document.getElementById('hangmanBlanks').textContent += `${word[i].toUpperCase()} `;
                 }
                 else {
                     document.getElementById('hangmanBlanks').textContent += '_ ';
@@ -49,7 +51,7 @@ function letterGuess() {
             }
         }
         else {
-            console.log("wrong");
+            document.getElementById("wrongGuesses").innerHTML += `<span class="wrongGuess">${guess.toUpperCase()}</span> `;
             wrongGuesses++;
             drawHangman();
         }

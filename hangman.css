@@ -14,7 +14,7 @@
 #hangmanBase {
     position: absolute;
     display: none;
-    top: 500px;
+    top: 450px;
     left: 50px;
     width: 300px;
     height: 20px;
@@ -24,7 +24,7 @@
 #hangmanStand {
     position: absolute;
     display: none;
-    top: 100px;
+    top: 50px;
     left: 100px;
     width: 20px;
     height: 400px;
@@ -37,7 +37,7 @@
 
 #hangmanCross {
     position: absolute;
-    top: 100px;
+    top: 50px;
     left: 100px;
     width: 300px;
     height: 20px;
@@ -46,7 +46,7 @@
 
 #hangmanBrace {
     position: absolute;
-    top: 125px;
+    top: 75px;
     left: 100px;
     width: 75px;
     height: 20px;
@@ -55,25 +55,31 @@
 }
 
 #hangmanAni {
-    transform-origin: 380px 100px;
-    animation-duration: 4s;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+    position: absolute;
+    top: 50px;
+    left: 300px;
+    transform-origin: top center;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    height: 400px;
+    width: 150px;
 }
 
 @keyframes hangmanRotate {
     0%   {transform: rotate(0deg);}
-    25%  {transform: rotate(5deg);}
-    50%  {transform: rotate(0deg);}
-    75%  {transform: rotate(-5deg);}
+    12.5%  {transform: rotate(5deg);}
+    37.5%  {transform: rotate(-5deg);}
+    62.5%  {transform: rotate(5deg);}
+    87.5%  {transform: rotate(-5deg);}
     100% {transform: rotate(0deg);}
 }
 
 #hangmanNoose {
     position: absolute;
     display: none;
-    top: 100px;
-    left: 375px;
+    top: 0px;
+    left: 75px;
     width: 10px;
     height: 50px;
     background-color: var(--ropeColour);
@@ -85,8 +91,8 @@
 
 #hangmanOuterHead {
     position: absolute;
-    top: 150px;
-    left: 345px;
+    top: 50px;
+    left: 45px;
     width: 70px;
     height: 70px;
     border-radius: 50%;
@@ -95,8 +101,8 @@
 
 #hangmanInnerHead {
     position: absolute;
-    top: 160px;
-    left: 355px;
+    top: 60px;
+    left: 55px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -106,8 +112,8 @@
 #hangmanBody {
     position: absolute;
     display: none;
-    top: 215px;
-    left: 370px;
+    top: 115px;
+    left: 70px;
     width: 20px;
     height: 130px;
     background-color: var(--personColour);
@@ -119,8 +125,8 @@
 
 #leftArm {
     position: absolute;
-    top: 230px;
-    left: 345px;
+    top: 130px;
+    left: 45px;
     width: 10px;
     height: 90px;
     transform: rotate(30deg);
@@ -129,8 +135,8 @@
 
 #rightArm {
     position: absolute;
-    top: 230px;
-    left: 405px;
+    top: 130px;
+    left: 105px;
     width: 10px;
     height: 90px;
     transform: rotate(-30deg);
@@ -143,8 +149,8 @@
 
 #leftLeg {
     position: absolute;
-    top: 330px;
-    left: 345px;
+    top: 230px;
+    left: 45px;
     width: 15px;
     height: 120px;
     transform: rotate(30deg);
@@ -153,8 +159,8 @@
 
 #rightLeg {
     position: absolute;
-    top: 330px;
-    left: 400px;
+    top: 230px;
+    left: 100px;
     width: 15px;
     height: 120px;
     transform: rotate(-30deg);
@@ -179,6 +185,17 @@
     width: 100%;
 }
 
+#wrongGuesses {
+    position: absolute;
+    bottom: 80px;
+    text-align: center;
+    width: 100%;
+}
+
+.wrongGuess {
+    text-decoration: line-through;
+}
+
 #hangmanCover {
     position: relative;
     display: flex;
@@ -197,6 +214,7 @@
     color: white;
     font-size: 40px;
     text-align: center;
+    padding: 0 20px;
 }
 
 .playAgain {
