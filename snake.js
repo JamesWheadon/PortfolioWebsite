@@ -2,34 +2,33 @@ const gameBoard = document.getElementById("snakeGame");
 const context = gameBoard.getContext("2d");
 const scale = 20;
 const color = "rgb(70, 214, 4)";
-let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, snakeLength;
-let snake = [{x: snakeHeadX, y:snakeHeadY}];
+let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, score;
+let tail;
 let eatenFruits = [];
 
 function playSnake() {
     newFruit();
-    console.log("Playing")
     window.addEventListener("keydown", pressedKey);
     xSpeed = scale;
     ySpeed = 0;
     snakeHeadX = 0;
     snakeHeadY = 0;
-    snakeLength = 0;
+    score = 0;
+    tail = [];
     gameInterval = window.setInterval(() => {
-        console.log(snakeLength)
         context.clearRect(0, 0, 500, 500);
         moveSnake();
         if (snakeHeadX === fruitX && snakeHeadY === fruitY) {
-            snakeLength++;
+            score++;
             eatenFruits.push({x: fruitX, y: fruitY})
             newFruit();
         }
-        drawSnake();
-        drawFruit();
         if(snakeHeadX >= gameBoard.width || snakeHeadX < 0 || snakeHeadY >= gameBoard.height || snakeHeadY < 0)
         {
             clearInterval(gameInterval);
         }
+        drawSnake();
+        drawFruit();
     }, 200);
 }
 
@@ -69,16 +68,16 @@ function pressedKey(event) {
 }
 
 function moveSnake() {
-    console.log(snake)
-    if (snakeLength > 0) {
-        for (let i = 1; i < snakeLength; i++) {
-            snake[i] = snake[i + 1];
+    if (tail.length > 0) {
+        for (let i = 0; i < tail.length - 1; i++) {
+            tail[i] = tail[i + 1];
         }
-        snake[snakeLength] = { x: snakeHeadX, y: snakeHeadY };
+        tail[tail.length - 1] = { x: snakeHeadX, y: snakeHeadY };
     }
     snakeHeadX += xSpeed;
     snakeHeadY += ySpeed;
-    growSnake()
+    yummyTail();
+    growSnake();
 }
 
 function drawSnake() {
@@ -91,11 +90,11 @@ function drawSnake() {
 
 function drawSnakeTail() {
 let tailRadius = scale/4;
-    for (i = 1; i < snakeLength; i++) {
-        tailRadius=tailRadius+((scale/4)/snakeLength);
+    for (i = 0; i < tail.length; i++) {
+        tailRadius=tailRadius+((scale/4)/tail.length);
         context.beginPath();
         context.fillStyle = color;
-        context.arc((snake[i].x+scale/2), (snake[i].y+scale/2), tailRadius, 0, 2 * Math.PI);
+        context.arc((tail[i].x+scale/2), (tail[i].y+scale/2), tailRadius, 0, 2 * Math.PI);
         context.fill();
     }
 }
@@ -114,12 +113,21 @@ function drawFruit() {
 
 function growSnake() {
     for (fruit of eatenFruits) {
-        if (!snake.includes(fruit)) {
-            snake.push(fruit);
+        if (!tail.includes(fruit)) {
+            tail.push(fruit);
             eatenFruits = eatenFruits.filter(item => item !== fruit);
             break;
         }
     }
+}
+
+function yummyTail() {
+    tail.forEach((item) => {
+        if (item.x === snakeHeadX && item.y === snakeHeadY) {
+            console.log(tail, {x: snakeHeadX, y: snakeHeadY})
+            clearInterval(gameInterval);
+        }
+    })
 }
 
 playSnake()
