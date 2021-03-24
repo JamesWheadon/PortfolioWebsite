@@ -33,7 +33,7 @@ function playHangman() {
     })
 }
 
-function letterGuess() {
+function letterGuess(event) {
     guessInput.value = "";
     guess = event.key.toLowerCase();
     if (alphabet.includes(guess) && !guessedLetters.includes(guess)) {

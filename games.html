@@ -5,7 +5,9 @@
     <title>Games</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link href="hangman.css" rel="stylesheet" type="text/css" />
+    <link href="snake.css" rel="stylesheet" type="text/css" />
     <script defer src="hangman.js"></script>
+    <script defer src="snake.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -52,5 +54,25 @@
             <h2 id="hangmanMessage"></h2>
             <button class="playAgain" type="button" onclick="playHangman()">Play Hangman</button>
         </div>
+    </section>
+    <section>
+        <canvas id="snakeGame" width="500px" height="500px"></canvas>
+        <!--
+        <div id="snakeGame">
+            <div id="snake">
+                <div id="head">
+                    <div id=headShape></div>
+                    <div id=leftEye></div>
+                    <div id=rightEye></div>
+                </div>
+                <div id="tail">
+                    <div class="stripe" id="tailShape"></div>
+                    <div class="stripe" id="tailStripe1"></div>
+                    <div class="stripe" id="tailStripe2"></div>
+                    <div class="stripe" id="tailStripe3"></div>
+                </div>
+            </div>
+        </div>
+        -->
     </section>
 </body>

@@ -145,10 +145,10 @@
     transform: rotate(30deg);
     background-color: var(--personColour);
     transform-origin: top center;
-    animation-duration: 2.4s;
+    animation-duration: calc(6.4s / 3);
     animation-iteration-count: 3;
     animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
-    animation-delay: 0.8s;
+    animation-delay: 1.6s;
 }
 
 #rightArm {
@@ -160,10 +160,10 @@
     transform: rotate(-30deg);
     background-color: var(--personColour);
     transform-origin: top center;
-    animation-duration: 2.4s;
+    animation-duration: calc(6.4s / 3);
     animation-iteration-count: 3;
     animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
-    animation-delay: 0.8s;
+    animation-delay: 1.6s;
 }
 
 @keyframes leftArmCelebrate {
