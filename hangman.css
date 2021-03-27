@@ -2,6 +2,35 @@
     --frameColour: rgb(136, 72, 0);
     --ropeColour: rgb(255, 187, 0);
     --personColour: rgb(0, 0, 0);
+    --backgroundColour: rgb(95, 75, 48);
+}
+
+main {
+    position: absolute;
+}
+
+#snake {
+    position: absolute;
+    height: 600px;
+    width: 500px;
+    top: -400px;
+    margin: auto;
+}
+
+#snakeHeader {
+    position: absolute;
+    top: 0;
+    height: 100px;
+    width: 100%;
+    background-color: blue;
+}
+
+#snakeGame {
+    position: absolute;
+    top: 100px;
+    height: 500px;
+    width: 500px;
+    background-color: var(--backgroundColour);
 }
 
 #hangman {
