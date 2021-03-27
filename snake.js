@@ -1,6 +1,6 @@
 const gameBoard = document.getElementById("snakeGame");
 const context = gameBoard.getContext("2d");
-const scale = 20;
+const scale = 50;
 const color = "rgb(70, 214, 4)";
 let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, score;
 let tail;
@@ -130,4 +130,168 @@ function yummyTail() {
     })
 }
 
-playSnake()
+//playSnake()
+
+const testBoard = document.getElementById("test");
+const ctx = testBoard.getContext("2d");
+const headDirection = {x: 1, y: 0};
+const head = {x: 100, y:100};
+const testArray = [{x: 100, y:100}, {x: 150, y: 100}, {x: 150, y: 50}, {x: 200, y: 50}, {x: 200, y: 100}, {x: 200, y: 150}, {x: 150, y: 150}, {x: 150, y: 200}, {x: 150, y: 250}, {x: 200, y: 250}, {x: 250, y: 250}, {x: 250, y: 300}, {x: 250, y: 350}, {x: 300, y: 350}, {x: 300, y: 300}]//, {x: 300, y: 250}]
+const dS = scale * 0.4;
+let pathD = headDirection;
+let nextD;
+function drawSnake() {
+    ctx.beginPath();
+
+    ctx.moveTo(head.x + pathD.y * dS + (pathD.x * scale / 2), head.y - pathD.x * dS + (pathD.y * scale / 2));
+    let lefts = 0;
+    for (let i = 1; i < testArray.length - 1; i++) {
+        point = testArray[i];
+        nextD = {x: (testArray[i + 1].x - point.x)/scale, y: (testArray[i + 1].y - point.y)/scale};
+        if (pathD.x === nextD.x) {
+            if (lefts > 0) {
+                if (lefts === 1) {
+                    quarterLeft(point);
+                } else {
+                    halfLeft(point);
+                }
+            }
+            ctx.lineTo(point.x + pathD.y * dS, point.y - pathD.x * dS);
+            lefts = 0;
+        } else if (pathD.x !== 0) {
+            if (pathD.x === nextD.y) {
+                if (lefts > 0) {
+                    if (lefts === 1) {
+                        quarterLeft(point);
+                    } else {
+                        halfLeft(point);
+                    }
+                }
+                ctx.lineTo(point.x, point.y - dS * pathD.x);
+                ctx.quadraticCurveTo(point.x + dS * pathD.x, point.y - dS * pathD.x, point.x + dS * pathD.x, point.y)
+            }
+            else {
+                lefts++;
+            }
+        } else {
+            if (pathD.y === nextD.x) {
+                lefts++;
+            }
+            else {
+                if (lefts > 0) {
+                    if (lefts === 1) {
+                        quarterLeft(point);
+                    } else {
+                        halfLeft(point);
+                    }
+                }
+                ctx.lineTo(point.x + dS * pathD.y, point.y);
+                ctx.quadraticCurveTo(point.x + dS * pathD.y, point.y + dS * pathD.y, point.x, point.y + dS * pathD.y);
+            }
+        }
+        pathD = nextD;
+    }
+    if (lefts > 0) {
+        if (lefts === 1) {
+            quarterLeft(testArray[testArray.length - 1]);
+        } else {
+            halfLeft(testArray[testArray.length - 1]);
+        }
+    }
+    drawTailEnd(testArray[testArray.length - 1])
+    pathD = {x: -pathD.x, y: -pathD.y}
+    lefts = 0;
+    for (let i = testArray.length - 2; i > 0; i--) {
+        point = testArray[i];
+        nextD = {x: (testArray[i - 1].x - point.x)/scale, y: (testArray[i - 1].y - point.y)/scale};
+        if (pathD.x === nextD.x) {
+            if (lefts > 0) {
+                if (lefts === 1) { 
+                    quarterLeft(point);
+                } else {
+                    halfLeft(point);
+                }
+            }
+            ctx.lineTo(point.x + pathD.y * dS, point.y - pathD.x * dS);
+            lefts = 0;
+        } else if (pathD.x !== 0) {
+            if (pathD.x === nextD.y) {
+                if (lefts > 0) {
+                    if (lefts === 1) {
+                        quarterLeft(point);
+                    } else {
+                        halfLeft(point);
+                    }
+                }
+                ctx.lineTo(point.x, point.y - dS * pathD.x);
+                ctx.quadraticCurveTo(point.x + dS * pathD.x, point.y - dS * pathD.x, point.x + dS * pathD.x, point.y)
+            }
+            else {
+                lefts++;
+            }
+        } else {
+            if (pathD.y === nextD.x) {
+                lefts++;
+            }
+            else {
+                if (lefts > 0) {
+                    if (lefts === 1) {
+                        quarterLeft(point);
+                    } else {
+                        halfLeft(point);
+                    }
+                }
+                ctx.lineTo(point.x + dS * pathD.y, point.y);
+                ctx.quadraticCurveTo(point.x + dS * pathD.y, point.y + dS * pathD.y, point.x, point.y + dS * pathD.y);
+            }
+        }
+        pathD = nextD;
+    }
+    if (lefts > 0) {
+        if (lefts === 1) {
+            quarterLeft(testArray[0]);
+        } else {
+            halfLeft(testArray[0]);
+        }
+    }
+    drawHead(head);
+    
+    ctx.fillStyle = color;
+    ctx.fill();
+    drawEyes();
+}
+
+function drawTailEnd(tailEnd) {
+    ctx.lineTo(tailEnd.x + pathD.y * dS - pathD.x * scale / 2, tailEnd.y - pathD.x * dS - pathD.y * scale / 2)
+    ctx.bezierCurveTo(tailEnd.x + (pathD.y * dS) + (pathD.x * scale / 2), tailEnd.y - (pathD.x * dS) + (pathD.y * scale / 2), tailEnd.x - (pathD.y * dS) + (pathD.x * scale / 2), tailEnd.y + (pathD.x * dS) + (pathD.y * scale / 2), tailEnd.x - pathD.y * dS - pathD.x * scale / 2, tailEnd.y + pathD.x * dS - pathD.y * scale / 2);
+}
+
+function drawHead(head) {
+    ctx.lineTo(head.x + pathD.y * dS - (pathD.x * scale / 2), head.y - pathD.x * dS - (pathD.y * scale / 2));
+    ctx.bezierCurveTo(head.x + pathD.y * scale / 2, head.y - pathD.x * scale / 2, head.x + (pathD.x + 0.4 * pathD.y) * scale / 2, head.y + (-0.4 * pathD.x + pathD.y) * scale / 2, head.x + pathD.x * scale / 2, head.y + pathD.y * scale / 2);
+    ctx.bezierCurveTo(head.x + (pathD.x - 0.4 * pathD.y) * scale / 2, head.y + (0.4 * pathD.x + pathD.y) * scale / 2, head.x - pathD.y * scale / 2, head.y + pathD.x * scale / 2, head.x - pathD.y * dS - (pathD.x * scale / 2), head.y + pathD.x * dS - (pathD.y * scale / 2));
+}
+
+function drawEyes() {
+    ctx.beginPath();
+    ctx.ellipse(head.x + pathD.y * scale / 5 - pathD.x * scale / 4, head.y + pathD.x * scale / 5 - pathD.y * scale / 4, dS / 3, dS / 4, -Math.PI / 4, 0, 2 * Math.PI);
+    ctx.ellipse(head.x - pathD.y * scale / 5 - pathD.x * scale / 4, head.y - pathD.x * scale / 5 - pathD.y * scale / 4, dS / 3, dS / 4, Math.PI / 4, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgb(255,255,255)";
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(head.x + pathD.y * scale / 5 - pathD.x * scale / 4, head.y + pathD.x * scale / 5 - pathD.y * scale / 4, dS / 6, 0, 2 * Math.PI);
+    ctx.arc(head.x - pathD.y * scale / 5 - pathD.x * scale / 4, head.y - pathD.x * scale / 5 - pathD.y * scale / 4, dS / 6, 0, 2 * Math.PI);
+    ctx.fillStyle = "rgb(0,0,0)";
+    ctx.fill();
+}
+
+function quarterLeft(point) {
+    ctx.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS), point.y - pathD.x * dS - pathD.y * (scale - dS), point.x + pathD.y * dS - pathD.x * (scale/2 - dS), point.y - pathD.x * dS - pathD.y * (scale / 2 - dS), (scale/2 - dS));
+}
+
+function halfLeft(point) {
+    ctx.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS) + pathD.y * 2 * (scale/2 - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS), point.x + pathD.y * dS - pathD.x * (scale/2 - dS) + pathD.y * (scale/2 - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS), (scale / 2 - dS));
+    ctx.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),point.x + pathD.y * dS - pathD.x * (scale - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * (scale/2 - dS), (scale / 2 - dS));
+}
+
+drawSnake()

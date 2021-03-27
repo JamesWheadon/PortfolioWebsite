@@ -1,85 +1,27 @@
 :root {
-    --snakeColour: rgb(70, 214, 4);
-    --stripeColour: rgb(139, 4, 4);
-    --teethColour: rgb(0, 0, 0);
     --backgroundColour: rgb(95, 75, 48);
-}
-
-#snakeGame {
-    position: relative;
-    height: 750px;
-    width: 750px;
-    top: -400px;
-    margin-left: 225px;
-    background-color: var(--backgroundColour);
 }
 
 #snake {
     position: relative;
-    height: 600px;
-    width: 500px;
+    height: 850px;
+    width: 750px;
     top: -400px;
     margin: auto;
 }
 
-#tail {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    transform: rotate(180deg);
-}
-
-#tailShape {
+#snakeHeader {
     position: absolute;
     top: 0;
-    left: 0;
-	width: 0;
-	height: 0;
-	border-left: 20px solid transparent;
-	border-right: 20px solid transparent;
-	border-bottom: 40px solid var(--snakeColour);
+    height: 100px;
+    width: 100%;
+    background-color: blue;
 }
 
-.stripe {
-	width: 0;
-	height: 0;
-	border-left: 4px solid transparent;
-	border-right: 4px solid transparent;
-	border-bottom: 20px solid var(--stripeColour);
-    transform-origin: bottom center;
-}
-
-#tailStripe1 {
+#snakeGame {
     position: absolute;
-    top: 10px; /*2x - 20*/
-    left: 31px; /*20 + x - 4*/
-    transform: rotate(calc(-180deg + 63.43494882deg));
-}
-
-#tailStripe2 {
-    position: absolute;
-    top: 5px; /*2x - 15*/
-    left: 7px; /*20 - x - 3*/
-    transform: rotate(calc(180deg - 63.43494882deg));
-	border-left: 3px solid transparent;
-	border-right: 3px solid transparent;
-	border-bottom: 15px solid var(--stripeColour);
-}
-
-#tailStripe3 {
-    position: absolute;
-    top: 0px; /*2x - 10*/
-    left: 23px; /*20 + x - 2*/
-    transform: rotate(calc(-180deg + 63.43494882deg));
-	border-left: 2px solid transparent;
-	border-right: 2px solid transparent;
-	border-bottom: 10px solid var(--stripeColour);
-}
-
-#headShape {
-    width: 50px;
-    height: 50px;
-    border-radius: 80% 15% 55% 50% / 55% 15% 80% 50%;
-    transform: rotate(-45deg);
-    background-color: var(--snakeColour);
+    top: 100px;
+    height: 750px;
+    width: 750px;
+    background-color: var(--backgroundColour);
 }

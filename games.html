@@ -19,60 +19,48 @@
     </div>
     <span class="OpenSidebar" onclick="openNav()">&#9776;</span>
     <h1>So I'm very competitive. Games nights are great fun, if I win</h1>
-    <section>
-        <div id="hangman">
-            <div class="hangmanDrawing" id="hangmanBase"></div>
-            <div class="hangmanDrawing" id="hangmanStand"></div>
-            <div class="hangmanDrawing" id="hangmanFrame">
-                <div id="hangmanCross"></div>
-                <div id="hangmanBrace"></div>
-            </div>
-            <div id="hangmanAni">
-                <div class="hangmanDrawing" id="hangmanNoose"></div>
-                <div class="hangmanDrawing" id="hangmanHead">
-                    <div id="hangmanOuterHead"></div>
-                    <div id="hangmanInnerHead"></div>
+    <main>
+        <section>
+            <div id="hangman">
+                <div class="hangmanDrawing" id="hangmanBase"></div>
+                <div class="hangmanDrawing" id="hangmanStand"></div>
+                <div class="hangmanDrawing" id="hangmanFrame">
+                    <div id="hangmanCross"></div>
+                    <div id="hangmanBrace"></div>
                 </div>
-                <div class="hangmanDrawing" id="hangmanBody"></div>
-                <div class="hangmanDrawing" id="hangmanArms">
-                    <div id="leftArm"></div>
-                    <div id="rightArm"></div>
+                <div id="hangmanAni">
+                    <div class="hangmanDrawing" id="hangmanNoose"></div>
+                    <div class="hangmanDrawing" id="hangmanHead">
+                        <div id="hangmanOuterHead"></div>
+                        <div id="hangmanInnerHead"></div>
+                    </div>
+                    <div class="hangmanDrawing" id="hangmanBody"></div>
+                    <div class="hangmanDrawing" id="hangmanArms">
+                        <div id="leftArm"></div>
+                        <div id="rightArm"></div>
+                    </div>
+                    <div class="hangmanDrawing" id="hangmanLegs">
+                        <div id="leftLeg"></div>
+                        <div id="rightLeg"></div>
+                    </div>
                 </div>
-                <div class="hangmanDrawing" id="hangmanLegs">
-                    <div id="leftLeg"></div>
-                    <div id="rightLeg"></div>
-                </div>
-            </div>
-            <h4 id="wrongGuesses"></h4>
-            <h4 id="hangmanBlanks"></h4>
-            <div id="hangmanInput">
-                <label for="hangmanGuess">Guess a letter:</label>
-                <input type="text" id="hangmanGuess" name="hangmanGuess">
-            </div>
-        </div>
-        <div id="hangmanCover">
-            <h2 id="hangmanMessage"></h2>
-            <button class="playAgain" type="button" onclick="playHangman()">Play Hangman</button>
-        </div>
-    </section>
-    <section>
-        <canvas id="snakeGame" width="500px" height="500px"></canvas>
-        <!--
-        <div id="snakeGame">
-            <div id="snake">
-                <div id="head">
-                    <div id=headShape></div>
-                    <div id=leftEye></div>
-                    <div id=rightEye></div>
-                </div>
-                <div id="tail">
-                    <div class="stripe" id="tailShape"></div>
-                    <div class="stripe" id="tailStripe1"></div>
-                    <div class="stripe" id="tailStripe2"></div>
-                    <div class="stripe" id="tailStripe3"></div>
+                <h4 id="wrongGuesses"></h4>
+                <h4 id="hangmanBlanks"></h4>
+                <div id="hangmanInput">
+                    <label for="hangmanGuess">Guess a letter:</label>
+                    <input type="text" id="hangmanGuess" name="hangmanGuess">
                 </div>
             </div>
-        </div>
-        -->
-    </section>
+            <div id="hangmanCover">
+                <h2 id="hangmanMessage"></h2>
+                <button class="playAgain" type="button" onclick="playHangman()">Play Hangman</button>
+            </div>
+        </section>
+        <section id="snake">
+            <div id="snakeHeader"></div>
+            <canvas id="snakeGame"></canvas>
+        </section>
+    </main>
+
+    <canvas id="test" height="500px" width="500px"></canvas>
 </body>
