@@ -42,7 +42,8 @@ main {
 }
 
 #snakeScores h4 {
-    width: 30%;
+    text-align: center;
+    width: 40%;
     display: inline;
 }
 
@@ -55,7 +56,7 @@ main {
     top: 90px;
     height: 500px;
     width: 500px;
-    background-color: white; /*var(--backgroundColour);*/
+    background-color: var(--backgroundColour);
 }
 
 #hangman {

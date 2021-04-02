@@ -6,6 +6,7 @@ const colour = "rgb(70, 214, 4)";
 let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, score, pathD, nextD, tail,eatenFruits, fullSnake, nextX, nextY;
 let playing = false;
 let pause = false;
+const scoreCard = document.getElementById("yourScore");
 
 document.getElementById("playPause").addEventListener("click", playPause);
 
@@ -60,6 +61,7 @@ function startInterval() {
         }
         drawSnake();
         drawFruit();
+        updateScore();
     }, 200);
 }
 
@@ -330,4 +332,8 @@ function drawFruit() {
     context.arc(fruitX, fruitY, scale/4, 0, 2 * Math.PI);
     context.fillStyle = 'rgb(255, 0, 0)';
     context.fill();
+}
+
+function updateScore() {
+    scoreCard.textContent = tail.length + eatenFruits.length - 1;
 }
