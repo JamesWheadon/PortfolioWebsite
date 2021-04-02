@@ -307,23 +307,3 @@ function drawFruit() {
 }
 
 playSnake()
-/*scale = 100;
-dS = scale * 0.4
-context.beginPath();
-pathD = {x: -1, y: 0};
-//context.moveTo(150, 150 + pathD.x * dS)
-//halfLeft1({x: 150, y: 150});
-//context.stroke();
-let x = 150;
-let y = 150;
-let circles = [{x: x - pathD.x * (scale - dS), y: y - pathD.x * (scale - dS)},
-    {x: x - pathD.x * (scale - dS), y: y - pathD.x * (scale/2)},
-    {x: x - pathD.x * (scale - dS), y: y - pathD.x * dS},
-    {x: x, y: y - pathD.x * dS},
-    {x: 150 - 50 * pathD.x, y: 150 - 50 * pathD.x}]
-circles.forEach(c => {
-    context.beginPath();
-    context.arc(c.x, c.y, 5, 0, 2 * Math.PI)
-    context.fill();
-    console.log(c.x, c.y)
-})*/
