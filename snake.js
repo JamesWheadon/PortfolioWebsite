@@ -1,7 +1,7 @@
 const gameBoard = document.getElementById("snakeGame");
 const context = gameBoard.getContext("2d");
-const scale = 25;
-const dS = scale * 0.4;
+let scale = 25;
+let dS = scale * 0.4;
 const colour = "rgb(70, 214, 4)";
 let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, score, pathD, nextD, tail,eatenFruits, fullSnake, nextX, nextY;
 
@@ -266,27 +266,17 @@ function drawEatenFruit() {
 }
 
 function quarterLeft(point) {
-    context.arcTo(
-    point.x + pathD.y * dS - pathD.x * (scale - dS),
-    point.y - pathD.x * dS - pathD.y * (scale - dS),
-    point.x + pathD.y * dS - pathD.x * (scale/2 - dS),
-    point.y - pathD.x * dS - pathD.y * (scale / 2 - dS),
-    (scale/2 - dS));
+    context.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS),point.y - pathD.x * dS - pathD.y * (scale - dS),point.x + pathD.y * dS - pathD.x * (scale/2 - dS),point.y - pathD.x * dS - pathD.y * (scale / 2 - dS),(scale/2 - dS));
 }
 
 function halfLeft(point) {
-    context.arcTo(
-    point.x + pathD.y * dS - pathD.x * (scale - dS) + pathD.y * 2 * (scale/2 - dS),
-    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),
-    point.x + pathD.y * dS - pathD.x * (scale/2 - dS) + pathD.y * (scale/2 - dS),
-    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),
-    (scale / 2 - dS));
-    context.arcTo(
-    point.x + pathD.y * dS - pathD.x * (scale - dS),
-    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),
-    point.x + pathD.y * dS - pathD.x * (scale - dS),
-    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * (scale/2 - dS),
-    (scale / 2 - dS));
+    if (pathD.y === 0) {
+        context.arcTo(point.x - pathD.x * (scale - dS),point.y - pathD.x * (scale - dS),point.x - pathD.x * (scale - dS),point.y - pathD.x * (scale/2),(scale/2 - dS))
+        context.arcTo(point.x - pathD.x * (scale - dS),point.y - pathD.x * dS,point.x,point.y - pathD.x * dS,(scale/2 - dS))
+    } else {
+        context.arcTo(point.x + pathD.y * (scale - dS),point.y - pathD.y * (scale - dS),point.x + pathD.y * (scale/2),point.y - pathD.y * (scale - dS),(scale / 2 - dS));
+        context.arcTo(point.x + pathD.y * dS,point.y - pathD.y * (scale - dS),point.x + pathD.y * dS,point.y,(scale / 2 - dS));
+    }
 }
 
 function newFruit() {
@@ -317,3 +307,23 @@ function drawFruit() {
 }
 
 playSnake()
+/*scale = 100;
+dS = scale * 0.4
+context.beginPath();
+pathD = {x: -1, y: 0};
+//context.moveTo(150, 150 + pathD.x * dS)
+//halfLeft1({x: 150, y: 150});
+//context.stroke();
+let x = 150;
+let y = 150;
+let circles = [{x: x - pathD.x * (scale - dS), y: y - pathD.x * (scale - dS)},
+    {x: x - pathD.x * (scale - dS), y: y - pathD.x * (scale/2)},
+    {x: x - pathD.x * (scale - dS), y: y - pathD.x * dS},
+    {x: x, y: y - pathD.x * dS},
+    {x: 150 - 50 * pathD.x, y: 150 - 50 * pathD.x}]
+circles.forEach(c => {
+    context.beginPath();
+    context.arc(c.x, c.y, 5, 0, 2 * Math.PI)
+    context.fill();
+    console.log(c.x, c.y)
+})*/

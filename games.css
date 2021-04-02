@@ -55,7 +55,7 @@ main {
     top: 90px;
     height: 500px;
     width: 500px;
-    background-color: var(--backgroundColour);
+    background-color: white; /*var(--backgroundColour);*/
 }
 
 #hangman {
