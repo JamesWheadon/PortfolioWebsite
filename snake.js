@@ -266,12 +266,27 @@ function drawEatenFruit() {
 }
 
 function quarterLeft(point) {
-    context.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS), point.y - pathD.x * dS - pathD.y * (scale - dS), point.x + pathD.y * dS - pathD.x * (scale/2 - dS), point.y - pathD.x * dS - pathD.y * (scale / 2 - dS), (scale/2 - dS));
+    context.arcTo(
+    point.x + pathD.y * dS - pathD.x * (scale - dS),
+    point.y - pathD.x * dS - pathD.y * (scale - dS),
+    point.x + pathD.y * dS - pathD.x * (scale/2 - dS),
+    point.y - pathD.x * dS - pathD.y * (scale / 2 - dS),
+    (scale/2 - dS));
 }
 
 function halfLeft(point) {
-    context.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS) + pathD.y * 2 * (scale/2 - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS), point.x + pathD.y * dS - pathD.x * (scale/2 - dS) + pathD.y * (scale/2 - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS), (scale / 2 - dS));
-    context.arcTo(point.x + pathD.y * dS - pathD.x * (scale - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),point.x + pathD.y * dS - pathD.x * (scale - dS), point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * (scale/2 - dS), (scale / 2 - dS));
+    context.arcTo(
+    point.x + pathD.y * dS - pathD.x * (scale - dS) + pathD.y * 2 * (scale/2 - dS),
+    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),
+    point.x + pathD.y * dS - pathD.x * (scale/2 - dS) + pathD.y * (scale/2 - dS),
+    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),
+    (scale / 2 - dS));
+    context.arcTo(
+    point.x + pathD.y * dS - pathD.x * (scale - dS),
+    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * 2 * (scale/2 - dS),
+    point.x + pathD.y * dS - pathD.x * (scale - dS),
+    point.y - pathD.x * dS - pathD.y * (scale/2) - pathD.y * (scale/2 - dS),
+    (scale / 2 - dS));
 }
 
 function newFruit() {

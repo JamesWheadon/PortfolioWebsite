@@ -4,8 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Games</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <link href="hangman.css" rel="stylesheet" type="text/css" />
-    <link href="snake.css" rel="stylesheet" type="text/css" />
+    <link href="games.css" rel="stylesheet" type="text/css" />
     <script defer src="hangman.js"></script>
     <script defer src="snake.js"></script>
     <script defer src="script.js"></script>
@@ -57,7 +56,14 @@
             </div>
         </section>
         <section id="snake">
-            <div id="snakeHeader"></div>
+            <div id="snakeHeader">
+                <h2>Snake</h2>
+                <div id="snakeScores">
+                    <h4>Your Score: <span id="yourScore"></span></h4>
+                    <h4>Highscore: <span id="highScore"></span></h4>
+                    <button id="playPause">Test</button>
+                </div>
+            </div>
             <canvas id="snakeGame" height="500px" width="500px"></canvas>
         </section>
     </main>
