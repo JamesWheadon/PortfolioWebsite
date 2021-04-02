@@ -1,12 +1,31 @@
 const gameBoard = document.getElementById("snakeGame");
 const context = gameBoard.getContext("2d");
-let scale = 25;
-let dS = scale * 0.4;
+const scale = 25;
+const dS = scale * 0.4;
 const colour = "rgb(70, 214, 4)";
 let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, score, pathD, nextD, tail,eatenFruits, fullSnake, nextX, nextY;
+let playing = false;
+let pause = false;
+
+document.getElementById("playPause").addEventListener("click", playPause);
+
+function playPause() {
+    if (!playing) {
+        playing = true;
+        playSnake();
+    } else {
+            if (!pause) {
+            pause = true;
+            window.removeEventListener("keydown", pressedKey);
+            clearInterval(gameInterval)
+        } else {
+            pause = false;
+            startInterval();
+        }
+    }
+}
 
 function playSnake() {
-    window.addEventListener("keydown", pressedKey);
     xSpeed = scale;
     ySpeed = 0;
     nextX = 0;
@@ -17,7 +36,12 @@ function playSnake() {
     tail = [{x: scale * 0.5, y: scale * 0.5}];
     eatenFruits = [];
     newFruit();
+    startInterval();
+}
+
+function startInterval() {
     gameInterval = window.setInterval(() => {
+        window.addEventListener("keydown", pressedKey);
         context.clearRect(0, 0, gameBoard.width, gameBoard.height);
         if (nextX + nextY !== 0) {
             xSpeed = nextX;
@@ -32,6 +56,7 @@ function playSnake() {
         if(snakeHeadX >= gameBoard.width || snakeHeadX < 0 || snakeHeadY >= gameBoard.height || snakeHeadY < 0)
         {
             clearInterval(gameInterval);
+            playing = false;
         }
         drawSnake();
         drawFruit();
@@ -81,7 +106,7 @@ function growSnake() {
             eatenFruits = eatenFruits.filter(item => item !== eatenFruits[0]);
         }
         else {
-            moveSnake()
+            moveSnake();
         }
     }
     else {
@@ -105,6 +130,7 @@ function yummyTail() {
     tail.forEach((item) => {
         if (item.x === snakeHeadX && item.y === snakeHeadY) {
             clearInterval(gameInterval);
+            playing = false;
         }
     })
 }
@@ -305,5 +331,3 @@ function drawFruit() {
     context.fillStyle = 'rgb(255, 0, 0)';
     context.fill();
 }
-
-playSnake()
