@@ -2,13 +2,83 @@
     --frameColour: rgb(136, 72, 0);
     --ropeColour: rgb(255, 187, 0);
     --personColour: rgb(0, 0, 0);
+    --backgroundColour: rgb(95, 75, 48);
+}
+
+main {
+    position: relative;
+    width: 500px;
+    height: 1350px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+#snake {
+    position: absolute;
+    height: 590px;
+    width: 500px;
+    top: 700px;
+    margin: auto;
+}
+
+#snakeHeader {
+    position: absolute;
+    top: 0px;
+    height: fit-content;
+    width: 100%;
+    background-color: rgb(170, 170, 170);
+}
+
+#snakeHeader h2 {
+    text-align: center;
+    margin: 10px 0px;
+}
+
+#snakeScores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+#snakeScores h4 {
+    text-align: center;
+    width: 40%;
+    display: inline;
+}
+
+#snakeScores button {
+    width: 10%;
+}
+
+#snakeGame {
+    position: absolute;
+    top: 90px;
+    height: 500px;
+    width: 500px;
+    background-color: var(--backgroundColour);
 }
 
 #hangman {
     position: relative;
+    top: 50px;
     height: 600px;
     width: 500px;
     margin: auto;
+}
+
+#hangmanCover {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 50px;
+    height: 600px;
+    width: 500px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 #hangmanBase {
@@ -145,10 +215,10 @@
     transform: rotate(30deg);
     background-color: var(--personColour);
     transform-origin: top center;
-    animation-duration: 2.4s;
+    animation-duration: calc(6.4s / 3);
     animation-iteration-count: 3;
     animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
-    animation-delay: 0.8s;
+    animation-delay: 1.6s;
 }
 
 #rightArm {
@@ -160,10 +230,10 @@
     transform: rotate(-30deg);
     background-color: var(--personColour);
     transform-origin: top center;
-    animation-duration: 2.4s;
+    animation-duration: calc(6.4s / 3);
     animation-iteration-count: 3;
     animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
-    animation-delay: 0.8s;
+    animation-delay: 1.6s;
 }
 
 @keyframes leftArmCelebrate {
@@ -229,20 +299,6 @@
 
 .wrongGuess {
     text-decoration: line-through;
-}
-
-#hangmanCover {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    top: -600px;
-    height: 600px;
-    width: 500px;
-    margin: auto;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
 }
 
 #hangmanMessage {
