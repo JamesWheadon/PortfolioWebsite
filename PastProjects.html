@@ -17,43 +17,62 @@
     </div>
     <span class="OpenSidebar" onclick="openNav()">&#9776;</span>
     <h1 style="color: black;">Past Projects</h1>
-    <h4>Sitting alone at a desk, programming away doing silly little tasks is great, but you know whats better? Working with other people to make something awesome, or just doing a silly big task!</h4>
+    <h4>Studying engineering at university gave me the oppurtunity to apply theory from lectures in practical projects. Below are a few of my favourites that I carried out at university, some with the resources available to apply the project to hardware and see them work in the real world. I still like to throw myself in to a project, some of my personal projects and projects done with futureproof are listed below.</h4>
     <section id="ProjectsContainer">
-        <h2 id="FootballerTitle">
+        <h2 id="FootballerTitle" class="title">
             Self-Balancing Footballer
         </h2>
-        <p id="FootballerSummary">
+        <p id="FootballerSummary" class="summary">
             A week-long project to make a controllable football player using lego mindstorms components, as well as MATLAB and Simulink to handle the control elements of the problem. The control system would stabilise the robot allowing it to balance on 2 wheels while being controlled to make it move forward and backwards, turn and kick a football.
         </p>
-        <iframe id="FootballerMedia" src="https://drive.google.com/file/d/1w1JsWZXFingSsP3y-NNNEhp6B1vSpJNv/preview"></iframe>
-        <h2 id="LineBotTitle">
+        <iframe id="FootballerMedia" class="media" src="https://drive.google.com/file/d/1w1JsWZXFingSsP3y-NNNEhp6B1vSpJNv/preview"></iframe>
+        <h2 id="LineBotTitle" class="title">
             Line Following Robot
         </h2>
-        <p id="LineBotSummary">
+        <p id="LineBotSummary" class="summary">
             Coding a line-following robot from scratch, given the documentation for the microcontroller of the robot and information about the other hardware like the camera, the robot was programmed to follow black lines and make decisions at junctions to navigate a simple environment.
         </p>
-        <iframe id="LineBotMedia" src="https://drive.google.com/file/d/102PaQzQsnxAH55n6oIfgLF45GRol4VOf/preview" width="640" height="360"></iframe>
-        <h2 id="FourYPTitle">
+        <iframe id="LineBotMedia" class="media" src="https://drive.google.com/file/d/102PaQzQsnxAH55n6oIfgLF45GRol4VOf/preview" width="640" height="360"></iframe>
+        <h2 id="FourYPTitle" class="title">
             Multi-Agent Path Finding AI
         </h2>
-        <p id="FourYPSummary">
-            Developed an algorithm to plan paths for non-holonomic robots with inertial constraints in continuous time, using a discrete representation of an environment that multiple robots are navigating simultaneously. The final algorithm was succesful in testing against competing methods and provably optimal in certain scenarios.
-            <br>
-            <br>
-            tl;dr: robots not crash.
+        <p id="FourYPSummary" class="summary">
+            Implemented and developed multi-agent path finding artificial intelligences to plan paths for multiple robots in the same environment. The final algorithm found paths for non-holonomic heterogeneous robots with inertial constraints in continuous time, using a discrete representation of an environment that multiple robots are navigating simultaneously. The final algorithm was succesful in testing against leading methods and provably optimal in certain scenarios.
         </p>
-        <iframe id="FourYPMedia" src="https://drive.google.com/file/d/1FSLgoxi2lliDBROnGHJbyYaozYoX7FyQ/preview" width="640" height="360"></iframe>
+        <iframe id="FourYPMedia" class="media" src="https://drive.google.com/file/d/1FSLgoxi2lliDBROnGHJbyYaozYoX7FyQ/preview" width="640" height="360"></iframe>
     </section>
     <br>
     <section>
-        <h3>I have done some other projects as well, though slightly less cool because they dont involve robots.</h2>
         <ul>
+            <li>
+                Built a linear-regression machine learning model, looking at optimization methods to improve the results.
+            </li>
             <li>
                 I used python, HTML, CSS and Javascript to create prospectuses for a cycle touring company, have a look at an example <a href="https://www.bikexplore.co.uk/Abroad/Normandy-Chateau-2021">here</a>, or try <a href="https://bikexplore.netlify.app/">creating your own</a>.
             </li>
             <li>
-                I wanted to learn a statically typed object orientated language, so voila: Chess in Java. Can't play it but I can code it.
+                I wanted to learn a statically typed object orientated language, so created chess in Java. This was made using basic functionality <a href="https://github.com/psoder3/Program-Your-Own-Chess">found here</a>.
+            </li>
+            <li>
+                Created an anonymous journalling website in lap 1 of the futureproof course. Users of the website were able to anonymously make posts or leave comments and reactions to other people's posts.
+            </li>
+            <li>
+                Created a habit-tracking website in lap 2 of the futureproof course. Users could register or log in and then track their coding, water intake and sleep. It can be found <a href="https://drink-sleep-code-repeat.netlify.app/">here</a>.
             </li>
         </ul>
     </section>
+    <footer>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="#">Past Projects</a></li>
+            <li><a href="Games.html">Games</a></li>
+        </ul>
+        <h4>Contact me</h4>
+        <ul>
+            <li><a href="mailto:james.wheadon@yahoo.com">Email</a></li>
+            <li><a href="https://github.com/JamesWheadon">GitHub</a></li>
+        </ul>
+    </footer>
 </body>
