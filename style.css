@@ -8,24 +8,33 @@
   --PrimaryColour: rgba(0, 0, 0, 1);
   --SecondaryColour: rgba(0, 0, 0, 1);
   --TertiaryColour: rgba(134, 70, 70, 1);
+  --bodyWidth: 1200px;
 }
 
 html {
-  height: 100%;
+  height: auto;
   margin: 0;
+  background-image: url('./images/portfolioBackground.png');
+  background-size: cover;
+  background-repeat: repeat-y;
 }
 
 body {
+  position: relative;
+  height: auto;
   background-color: var(--BackgroundColour);
   color: rgb(0, 0, 0);
-  width: 1200px;
-  margin: auto;
+  width: var(--bodyWidth);
+  margin: 50px auto;
   margin-bottom: 50px;
   font-family: 'Nanum Gothic', sans-serif;
 }
 
 main {
-  margin-top: calc(100vw / 2.5);
+  position: relative;
+  width: var(--bodyWidth);
+  background-color: var(--BackgroundColour);
+  padding: 20px;
 }
 
 h1 {
@@ -36,27 +45,22 @@ h1 {
 }
 
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
   box-sizing: border-box;
 }
 
 .mySlides {
   transition: opacity .5s ease-in;
-  width: 100%;
+  width: var(--bodyWidth);
   position: absolute;
   top: 0;
-  left: 0;
 }
 
 .mySlides + .mySlides { opacity: 0; }
 
 .slideshowContainer {
-  max-width: 100%;
+  width: var(--bodyWidth);
+  background-color: var(--BackgroundColour);
+  height: calc(var(--bodyWidth)/2.5);
 }
 
 h2 {
@@ -94,4 +98,57 @@ h2 {
   background-color: rgba(0, 0, 0, 0.25);
   cursor: pointer;
   font-size: 30px;
+}
+
+#headshot {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: auto;
+  border-radius: 10px;
+}
+
+#skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#skills ul {
+  padding-left: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  padding-bottom: 20px;
+}
+
+footer h4 {
+  grid-row: 1;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: white;
+  grid-row: 2;
+}
+
+@media only screen and (max-width: 1320px) {
+  :root {
+    --bodyWidth: 90vw;
+  }
 }
