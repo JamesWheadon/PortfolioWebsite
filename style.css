@@ -147,6 +147,31 @@ footer ul li a {
   grid-row: 2;
 }
 
+#aboutMe {
+  margin: 0px 20px;
+}
+
+#aboutMe h1 {
+  margin: 10px 0px;
+}
+
+#aboutMe p {
+  text-align: justify;
+}
+
+#turtle {
+  float: left;
+}
+
+#skis {
+  float: right;
+}
+
+.aboutMeImage {
+  width: 300px;
+  height: 225px;
+}
+
 @media only screen and (max-width: 1320px) {
   :root {
     --bodyWidth: 90vw;
