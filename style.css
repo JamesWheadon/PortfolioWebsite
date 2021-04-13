@@ -147,6 +147,14 @@ footer ul li a {
   grid-row: 2;
 }
 
+#aboutMe {
+  margin: 0px 20px;
+}
+
+#aboutMe h1 {
+  margin: 10px 0px;
+}
+
 @media only screen and (max-width: 1320px) {
   :root {
     --bodyWidth: 90vw;
