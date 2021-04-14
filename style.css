@@ -168,8 +168,9 @@ footer ul li a {
 }
 
 .aboutMeImage {
-  width: calc(var(--bodyWidth) / 2 - 20px);
-  height: calc((var(--bodyWidth) / 2 - 20px) * 0.75);
+  width: calc(var(--bodyWidth) / 2 - 40px);
+  height: calc((var(--bodyWidth) / 2 - 40px) * 0.75);
+  margin: 10px;
 }
 
 .card {
