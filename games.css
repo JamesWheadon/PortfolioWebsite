@@ -3,6 +3,7 @@
     --ropeColour: rgb(255, 187, 0);
     --personColour: rgb(0, 0, 0);
     --backgroundColour: rgb(95, 75, 48);
+    --leftAlignGame: calc((var(--bodyWidth) - 500px) / 2);
     --scale: 1;
 }
 
@@ -18,7 +19,7 @@ main {
     height: 590px;
     width: 500px;
     top: 700px;
-    left: calc((var(--bodyWidth) - 500px) / 2);
+    left: var(--leftAlignGame);
 }
 
 #snakeHeader {
@@ -60,11 +61,11 @@ main {
 }
 
 #hangman {
-    position: relative;
+    position: absolute;
     top: 50px;
+    left: var(--leftAlignGame);
     height: 600px;
     width: 500px;
-    margin: auto;
 }
 
 #hangmanCover {
@@ -74,9 +75,9 @@ main {
     justify-content: space-around;
     align-items: center;
     top: 50px;
+    left: var(--leftAlignGame);
     height: 600px;
     width: 500px;
-    margin: auto;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
@@ -324,40 +325,85 @@ main {
 }
 
 @media only screen and (max-width: 540px) {
+    :root {
+        --scale: 0.8;
+        --leftAlignGame: calc((var(--bodyWidth) - 400px) / 2);
+    }
+
     #snake {
         height: 490px;
         width: 400px;
-        left: calc((var(--bodyWidth) - 400px) / 2);
+        top: 600px;
     }
 
     #snakeGame {
         height: 400px;
         width: 400px;
     }
+
+    #hangman {
+        height: 500px;
+        width: 400px;
+    }
+    
+    #hangmanCover {
+        height: 500px;
+        width: 400px;
+    }
 }
 
 @media only screen and (max-width: 440px) {
+    :root {
+        --scale: 0.6;
+        --leftAlignGame: calc((var(--bodyWidth) - 300px) / 2);
+    }
+
     #snake {
         height: 390px;
         width: 300px;
-        left: calc((var(--bodyWidth) - 300px) / 2);
+        top: 500px;
     }
     
     #snakeGame {
         height: 300px;
         width: 300px;
     }
+
+    #hangman {
+        height: 400px;
+        width: 300px;
+    }
+    
+    #hangmanCover {
+        height: 400px;
+        width: 300px;
+    }
 }
 
 @media only screen and (max-width: 340px) {
+    :root {
+        --scale: 0.48;
+        --leftAlignGame: calc((var(--bodyWidth) - 240px) / 2);
+    }
+
     #snake {
         height: 330px;
         width: 240px;
-        left: calc((var(--bodyWidth) - 240px) / 2);
+        top: 440px;
     }
     
     #snakeGame {
         height: 240px;
+        width: 240px;
+    }
+
+    #hangman {
+        height: 340px;
+        width: 240px;
+    }
+    
+    #hangmanCover {
+        height: 340px;
         width: 240px;
     }
 }
