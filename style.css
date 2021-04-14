@@ -168,8 +168,8 @@ footer ul li a {
 }
 
 .aboutMeImage {
-  width: 300px;
-  height: 225px;
+  width: calc(var(--bodyWidth) / 2 - 20px);
+  height: calc((var(--bodyWidth) / 2 - 20px) * 0.75);
 }
 
 @media only screen and (max-width: 1320px) {

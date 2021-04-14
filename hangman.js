@@ -17,8 +17,8 @@ function playHangman() {
     document.getElementById("leftArm").style.animationName = "";
     document.getElementById("rightArm").style.animationName = "";
     document.getElementById("wrongGuesses").innerHTML = "";
-    document.getElementById("hangmanAni").style.left = "300px";
-    document.getElementById("hangmanAni").style.top = "50px";
+    document.getElementById("hangmanAni").style.left = "calc(300px * var(--scale))";
+    document.getElementById("hangmanAni").style.top = "calc(50px * var(--scale))";
     Array.prototype.forEach.call(document.getElementsByClassName("hangmanDrawing"), element => {
         element.style.display = "none";
     });

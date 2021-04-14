@@ -3,11 +3,11 @@
     --ropeColour: rgb(255, 187, 0);
     --personColour: rgb(0, 0, 0);
     --backgroundColour: rgb(95, 75, 48);
+    --scale: 1;
 }
 
 main {
     position: relative;
-    width: 500px;
     height: 1350px;
     margin: auto;
     padding-bottom: 50px;
@@ -31,14 +31,14 @@ main {
 
 #snakeHeader h2 {
     text-align: center;
-    margin: 10px 0px;
+    margin: 0px;
 }
 
 #snakeScores {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin: 10px 0px;
+    margin: 0px;
 }
 
 #snakeScores h4 {
@@ -84,20 +84,20 @@ main {
 #hangmanBase {
     position: absolute;
     display: none;
-    top: 450px;
-    left: 50px;
-    width: 300px;
-    height: 20px;
+    top: calc(450px * var(--scale));
+    left: calc(50px * var(--scale));
+    width: calc(300px * var(--scale));
+    height: calc(20px * var(--scale));
     background-color: var(--frameColour);
 }
 
 #hangmanStand {
     position: absolute;
     display: none;
-    top: 50px;
-    left: 100px;
-    width: 20px;
-    height: 400px;
+    top: calc(50px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(20px * var(--scale));
+    height: calc(400px * var(--scale));
     background-color: var(--frameColour);
 }
 
@@ -107,33 +107,33 @@ main {
 
 #hangmanCross {
     position: absolute;
-    top: 50px;
-    left: 100px;
-    width: 300px;
-    height: 20px;
+    top: calc(50px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(300px * var(--scale));
+    height: calc(20px * var(--scale));
     background-color: var(--frameColour);
 }
 
 #hangmanBrace {
     position: absolute;
-    top: 75px;
-    left: 100px;
-    width: 75px;
-    height: 20px;
+    top: calc(75px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(75px * var(--scale));
+    height: calc(20px * var(--scale));
     transform: rotate(-45deg);
     background-color: var(--frameColour);
 }
 
 #hangmanAni {
     position: absolute;
-    top: 50px;
-    left: 300px;
+    top: calc(50px * var(--scale));
+    left: calc(300px * var(--scale));
     transform-origin: top center;
     animation-duration: 8s;
     animation-iteration-count: 1;
     animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
-    height: 400px;
-    width: 150px;
+    height: calc(400px * var(--scale));
+    width: calc(150px * var(--scale));
 }
 
 @keyframes hangmanRotate {
@@ -146,25 +146,25 @@ main {
 }
 
 @keyframes hangmanCelebrate {
-    0%   {left: 300px; top: 50px;}
-    20%  {left: 175px; top: 111.5px;}
-    30%  {left: 175px; top: 36.5px;}
-    40%  {left: 175px; top: 111.5px;}
-    50%  {left: 175px; top: 36.5px;}
-    60%  {left: 175px; top: 111.5px;}
-    70%  {left: 175px; top: 36.5px;}
-    80%  {left: 175px; top: 111.5px;}
-    90%  {left: 175px; top: 36.5px;}
-    100%  {left: 175px; top: 111.5px;}
+    0%   {left: calc(300px * var(--scale)); top: calc(50px * var(--scale));}
+    20%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    30%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    40%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    50%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    60%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    70%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    80%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    90%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    100%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
 }
 
 #hangmanNoose {
     position: absolute;
     display: none;
     top: 0px;
-    left: 75px;
-    width: 10px;
-    height: 50px;
+    left: calc(75px * var(--scale));
+    width: calc(10px * var(--scale));
+    height: calc(50px * var(--scale));
     background-color: var(--ropeColour);
 }
 
@@ -174,20 +174,20 @@ main {
 
 #hangmanOuterHead {
     position: absolute;
-    top: 50px;
-    left: 45px;
-    width: 70px;
-    height: 70px;
+    top: calc(50px * var(--scale));
+    left: calc(45px * var(--scale));
+    width: calc(70px * var(--scale));
+    height: calc(70px * var(--scale));
     border-radius: 50%;
     background-color: var(--personColour);
 }
 
 #hangmanInnerHead {
     position: absolute;
-    top: 60px;
-    left: 55px;
-    width: 50px;
-    height: 50px;
+    top: calc(60px * var(--scale));
+    left: calc(55px * var(--scale));
+    width: calc(50px * var(--scale));
+    height: calc(50px * var(--scale));
     border-radius: 50%;
     background-color: white;
 }
@@ -195,10 +195,10 @@ main {
 #hangmanBody {
     position: absolute;
     display: none;
-    top: 115px;
-    left: 70px;
-    width: 20px;
-    height: 130px;
+    top: calc(115px * var(--scale));
+    left: calc(70px * var(--scale));
+    width: calc(20px * var(--scale));
+    height: calc(130px * var(--scale));
     background-color: var(--personColour);
 }
 
@@ -208,10 +208,10 @@ main {
 
 #leftArm {
     position: absolute;
-    top: 130px;
-    left: 70px;
-    width: 10px;
-    height: 90px;
+    top: calc(130px * var(--scale));
+    left: calc(70px * var(--scale));
+    width: calc(10px * var(--scale));
+    height: calc(90px * var(--scale));
     transform: rotate(30deg);
     background-color: var(--personColour);
     transform-origin: top center;
@@ -223,10 +223,10 @@ main {
 
 #rightArm {
     position: absolute;
-    top: 130px;
-    left: 80px;
-    width: 10px;
-    height: 90px;
+    top: calc(130px * var(--scale));
+    left: calc(80px * var(--scale));
+    width: calc(10px * var(--scale));
+    height: calc(90px * var(--scale));
     transform: rotate(-30deg);
     background-color: var(--personColour);
     transform-origin: top center;
@@ -254,20 +254,20 @@ main {
 
 #leftLeg {
     position: absolute;
-    top: 230px;
-    left: 45px;
-    width: 15px;
-    height: 120px;
+    top: calc(230px * var(--scale));
+    left: calc(45px * var(--scale));
+    width: calc(15px * var(--scale));
+    height: calc(120px * var(--scale));
     transform: rotate(30deg);
     background-color: var(--personColour);
 }
 
 #rightLeg {
     position: absolute;
-    top: 230px;
-    left: 100px;
-    width: 15px;
-    height: 120px;
+    top: calc(230px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(15px * var(--scale));
+    height: calc(120px * var(--scale));
     transform: rotate(-30deg);
     background-color: var(--personColour);
 }
