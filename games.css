@@ -18,7 +18,7 @@ main {
     height: 590px;
     width: 500px;
     top: 700px;
-    margin: auto;
+    left: calc((var(--bodyWidth) - 500px) / 2);
 }
 
 #snakeHeader {
@@ -327,6 +327,7 @@ main {
     #snake {
         height: 490px;
         width: 400px;
+        left: calc((var(--bodyWidth) - 400px) / 2);
     }
 
     #snakeGame {
@@ -339,6 +340,7 @@ main {
     #snake {
         height: 390px;
         width: 300px;
+        left: calc((var(--bodyWidth) - 300px) / 2);
     }
     
     #snakeGame {
@@ -351,6 +353,7 @@ main {
     #snake {
         height: 330px;
         width: 240px;
+        left: calc((var(--bodyWidth) - 240px) / 2);
     }
     
     #snakeGame {
