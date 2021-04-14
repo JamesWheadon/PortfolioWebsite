@@ -322,3 +322,39 @@ main {
     outline: none;
     box-shadow: none;
 }
+
+@media only screen and (max-width: 540px) {
+    #snake {
+        height: 490px;
+        width: 400px;
+    }
+
+    #snakeGame {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    #snake {
+        height: 390px;
+        width: 300px;
+    }
+    
+    #snakeGame {
+        height: 300px;
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    #snake {
+        height: 330px;
+        width: 240px;
+    }
+    
+    #snakeGame {
+        height: 240px;
+        width: 240px;
+    }
+}

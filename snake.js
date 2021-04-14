@@ -1,6 +1,22 @@
 const gameBoard = document.getElementById("snakeGame");
 const context = gameBoard.getContext("2d");
-const scale = 25;
+if (window.innerWidth <= 540) {
+    if (window.innerWidth <= 440) {
+        if (window.innerWidth <= 340) {
+            gameBoard.width = 240;
+            gameBoard.height = 240;
+        }
+        else {
+            gameBoard.width = 300;
+            gameBoard.height = 300;
+        }
+    }
+    else {
+        gameBoard.width = 400;
+        gameBoard.height = 400;
+    }
+}
+const scale = gameBoard.width / 10;
 const dS = scale * 0.4;
 const colour = "rgb(70, 214, 4)";
 let xSpeed, ySpeed, snakeHeadX, snakeHeadY, fruitX, fruitY, score, pathD, nextD, tail,eatenFruits, fullSnake, nextX, nextY;
