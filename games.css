@@ -330,6 +330,10 @@ main {
         --leftAlignGame: calc((var(--bodyWidth) - 400px) / 2);
     }
 
+    main {
+        height: 1150px;
+    }
+
     #snake {
         height: 490px;
         width: 400px;
@@ -350,12 +354,20 @@ main {
         height: 500px;
         width: 400px;
     }
+
+    #hangmanInput {
+        left: 118px;
+    }
 }
 
 @media only screen and (max-width: 440px) {
     :root {
         --scale: 0.6;
         --leftAlignGame: calc((var(--bodyWidth) - 300px) / 2);
+    }
+
+    main {
+        height: 950px;
     }
 
     #snake {
@@ -378,12 +390,20 @@ main {
         height: 400px;
         width: 300px;
     }
+
+    #hangmanInput {
+        left: 68px;
+    }
 }
 
 @media only screen and (max-width: 340px) {
     :root {
         --scale: 0.48;
         --leftAlignGame: calc((var(--bodyWidth) - 240px) / 2);
+    }
+
+    main {
+        height: 830px;
     }
 
     #snake {
@@ -405,5 +425,9 @@ main {
     #hangmanCover {
         height: 340px;
         width: 240px;
+    }
+
+    #hangmanInput {
+        left: 38px;
     }
 }

@@ -1,5 +1,5 @@
 function openNav() {
-    document.getElementById("SidenavBar").style.width = "250px";
+    document.getElementById("SidenavBar").style.width = window.screen.width <= 500 ? "100%": "250px";
     document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 

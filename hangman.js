@@ -29,7 +29,7 @@ function playHangman() {
     guessWord.then(generatedWord => {
         word = generatedWord;
         hangmanClue();
-        guessInput.addEventListener('keyup', letterGuess);
+        guessInput.addEventListener('keypress', letterGuess);
     })
 }
 
