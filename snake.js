@@ -25,6 +25,8 @@ let pause = false;
 const scoreCard = document.getElementById("yourScore");
 
 document.getElementById("playPause").addEventListener("click", playPause);
+gameBoard.addEventListener("touch", touchMove);
+gameBoard.addEventListener("click", touchMove);
 
 function playPause() {
     if (!playing) {
@@ -116,6 +118,29 @@ function pressedKey(event) {
             break;
         default:
             break;
+    }
+}
+
+function touchMove(event) {
+    const rect = gameBoard.getBoundingClientRect()
+    const x = event.clientX - rect.left
+    const y = event.clientY - rect.top
+    if (x >= y) {
+        if (x + y <= gameBoard.width) {
+            nextX = 0;
+            nextY = -scale;
+        } else {
+            nextX = scale;
+            nextY = 0;
+        }
+    } else {
+        if (x + y <= gameBoard.width) {
+            nextX = -scale;
+            nextY = 0;
+        } else {
+            nextX = 0;
+            nextY = scale;
+        }
     }
 }
 
