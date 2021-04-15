@@ -71,7 +71,7 @@ h2 {
   height: 100%;
   width: 0;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   transition: 0.5s;
@@ -168,12 +168,40 @@ footer ul li a {
 }
 
 .aboutMeImage {
-  width: 300px;
-  height: 225px;
+  width: calc(var(--bodyWidth) / 2 - 40px);
+  height: calc((var(--bodyWidth) / 2 - 40px) * 0.75);
+  margin: 10px;
+}
+
+.card {
+  border: none;
+  background-color: var(--BackgroundColour);
 }
 
 @media only screen and (max-width: 1320px) {
   :root {
     --bodyWidth: 90vw;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  :root {
+    --bodyWidth: 800px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  :root {
+    --bodyWidth: 100vw;
+  }
+
+  body {
+    margin: 0px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+    font-size: 48px;
   }
 }

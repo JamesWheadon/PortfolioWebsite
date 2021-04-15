@@ -17,8 +17,8 @@ function playHangman() {
     document.getElementById("leftArm").style.animationName = "";
     document.getElementById("rightArm").style.animationName = "";
     document.getElementById("wrongGuesses").innerHTML = "";
-    document.getElementById("hangmanAni").style.left = "300px";
-    document.getElementById("hangmanAni").style.top = "50px";
+    document.getElementById("hangmanAni").style.left = "calc(300px * var(--scale))";
+    document.getElementById("hangmanAni").style.top = "calc(50px * var(--scale))";
     Array.prototype.forEach.call(document.getElementsByClassName("hangmanDrawing"), element => {
         element.style.display = "none";
     });
@@ -29,7 +29,7 @@ function playHangman() {
     guessWord.then(generatedWord => {
         word = generatedWord;
         hangmanClue();
-        guessInput.addEventListener('keyup', letterGuess);
+        guessInput.addEventListener('keypress', letterGuess);
     })
 }
 
@@ -108,8 +108,8 @@ function hangmanWon() {
     });
     document.getElementById('hangmanNoose').style.display = 'none';
     document.getElementById("hangmanAni").style.animationName = "hangmanCelebrate";
-    document.getElementById("hangmanAni").style.left = "175px";
-    document.getElementById("hangmanAni").style.top = "111.5px";
+    document.getElementById("hangmanAni").style.left = "calc(175px * var(--scale))";
+    document.getElementById("hangmanAni").style.top = "calc(111.5px * var(--scale))";
     document.getElementById("leftArm").style.animationName = "leftArmCelebrate";
     document.getElementById("rightArm").style.animationName = "rightArmCelebrate";
 }
