@@ -29,15 +29,18 @@ document.getElementById("playPause").addEventListener("click", playPause);
 function playPause() {
     if (!playing) {
         playing = true;
+        document.getElementById("playPause").textContent = "Pause";
         playSnake();
     } else {
             if (!pause) {
             pause = true;
             window.removeEventListener("keydown", pressedKey);
-            clearInterval(gameInterval)
+            clearInterval(gameInterval);
+            document.getElementById("playPause").textContent = "Play";
         } else {
             pause = false;
             startInterval();
+            document.getElementById("playPause").textContent = "Pause";
         }
     }
 }

@@ -59,6 +59,14 @@ section ul li a {
   font-weight: bold;
 }
 
+* {
+  line-height: 1;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
 @media only screen and (max-width: 1290px) {
   #ProjectsContainer {
     grid-template-rows: 80px auto 80px auto 80px auto;
