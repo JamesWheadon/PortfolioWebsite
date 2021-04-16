@@ -87,6 +87,12 @@ h2 {
   text-decoration: none;
 }
 
+@media (hover: none) {
+  .Sidenav a {
+    color: white;
+  }
+}
+
 .Sidenav a:hover {
   color: white;
 }
