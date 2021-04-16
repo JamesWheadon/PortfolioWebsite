@@ -1,0 +1,96 @@
+body h4 {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#ProjectsContainer {
+  padding: 20px 20px 50px 20px;
+  display: grid;
+  width: var(--bodyWidth);
+  grid-template-rows: 60px auto 60px auto 60px auto;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row-gap: 20px;
+  grid-column-gap: 10px;
+  margin: auto;
+}
+  
+#FootballerTitle {
+  grid-row: 1;
+}
+#FootballerSummary {
+  grid-row: 2;
+}
+#FootballerMedia {
+  grid-row: 1 / span 2;
+}
+#LineBotTitle {
+  grid-row: 3;
+}
+#LineBotSummary {
+  grid-row: 4;
+}
+#LineBotMedia {
+  grid-row: 3 / span 2;
+}
+#FourYPTitle {
+  grid-row: 5;
+}
+#FourYPSummary {
+  grid-row: 6;
+}
+#FourYPMedia {
+  grid-row: 5 / span 2;
+}
+.summary {
+  grid-column: 1 / span 2;
+}
+.title {
+  grid-column: 1 / span 2;
+}
+.media {
+  grid-column: 3;
+  width: 640px;
+  height: 360px;
+  border: none;
+}
+
+section ul li a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+* {
+  line-height: 1;
+}
+
+h1, h2 {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 1290px) {
+  #ProjectsContainer {
+    grid-template-rows: 80px auto 80px auto 80px auto;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .title {
+    margin: 10px 0px;
+  }
+  .summary {
+    margin: 10px 0px;
+  }
+  #ProjectsContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .media {
+    width: calc((var(--bodyWidth) - 40px));
+    height: calc((var(--bodyWidth) - 40px) * 0.5625);
+  }
+}

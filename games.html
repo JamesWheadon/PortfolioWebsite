@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="games.css" rel="stylesheet" type="text/css" />
+    <script defer src="hangman.js"></script>
+    <script defer src="snake.js"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="SidenavBar" class="Sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Homepage</a>
+        <a href="aboutMe.html">About Me</a>
+        <a href="PastProjects.html">Past Projects</a>
+        <a href="#">Games</a>
+    </div>
+    <span class="OpenSidebar" onclick="openNav()">&#9776;</span>
+    <h1>Just a bit of fun</h1>
+    <main>
+        <div id="hangman">
+            <div class="hangmanDrawing" id="hangmanBase"></div>
+            <div class="hangmanDrawing" id="hangmanStand"></div>
+            <div class="hangmanDrawing" id="hangmanFrame">
+                <div id="hangmanCross"></div>
+                <div id="hangmanBrace"></div>
+            </div>
+            <div id="hangmanAni">
+                <div class="hangmanDrawing" id="hangmanNoose"></div>
+                <div class="hangmanDrawing" id="hangmanHead">
+                    <div id="hangmanOuterHead"></div>
+                    <div id="hangmanInnerHead"></div>
+                </div>
+                <div class="hangmanDrawing" id="hangmanBody"></div>
+                <div class="hangmanDrawing" id="hangmanArms">
+                    <div id="leftArm"></div>
+                    <div id="rightArm"></div>
+                </div>
+                <div class="hangmanDrawing" id="hangmanLegs">
+                    <div id="leftLeg"></div>
+                    <div id="rightLeg"></div>
+                </div>
+            </div>
+            <h4 id="wrongGuesses"></h4>
+            <h4 id="hangmanBlanks"></h4>
+            <div id="hangmanInput">
+                <label for="hangmanGuess">Guess a letter:</label>
+                <input type="text" id="hangmanGuess" name="hangmanGuess">
+            </div>
+        </div>
+        <div id="hangmanCover">
+            <h2 id="hangmanMessage"></h2>
+            <button class="playAgain" type="button" onclick="playHangman()">Play Hangman</button>
+        </div>
+        <section id="snake">
+            <div id="snakeHeader">
+                <h2>Snake</h2>
+                <div id="snakeScores">
+                    <h4>Your Score: <span id="yourScore"></span></h4>
+                    <button id="playPause">Play</button>
+                </div>
+            </div>
+            <canvas id="snakeGame" height="500px" width="500px"></canvas>
+        </section>
+    </main>
+    <footer>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="#">About Me</a></li>
+            <li><a href="PastProjects.html">Past Projects</a></li>
+            <li><a href="Games.html">Games</a></li>
+        </ul>
+        <h4>Contact me</h4>
+        <ul>
+            <li><a href="mailto:james.wheadon@yahoo.com">Email</a></li>
+            <li><a href="https://github.com/JamesWheadon">GitHub</a></li>
+            <li><a href="https://uk.linkedin.com/in/james-wheadon-595a4a20b?trk=people-guest_people_search-card">LinkedIn</a></li>
+        </ul>
+    </footer>
+</body>

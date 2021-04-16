@@ -4,61 +4,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>James Wheadon</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script defer src="index.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <div class="Banner">
-        <table class="Headertable">
-            <tr>
-                <td class="Headertd">
-                    <h1>
-                        James Wheadon
-                    </h1>
-                </td>
-                <td class="Headertd">
-                    <a href="https://github.com/JamesWheadon" target="_blank">
-                        <img id="GithubBannerImage" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Octicons-logo-github.svg" alt="Github logo">
-                    </a>
-                </td>
-            </tr>
-        </table>
+    <div class="slideshowContainer">
+        <img class="mySlides" src="./images/CampLakeBanner.png"/>
+        <img class="mySlides" src="./images/WalkingMechanism.png"/>
+        <img class="mySlides" src="./images/MountainsCropped.png"/>
     </div>
-    <div class="tab">
-        <button class="tablinks" onclick="opentab(event, 'AboutMe')" id="defaultOpen" type="button">About Me</button>
-        <button class="tablinks" onclick="opentab(event, 'PastProjects')" type="button">Past Projects</button>
-        <button class="tablinks" onclick="opentab(event, 'Interests')" type="button">Hobbies and Interests</button>
-      </div>
-    <div id="AboutMe" class="tabcontent">
-        <p>
-            Not really sure what to put here yet.
-        </p>
-    </div>
-    <div id="PastProjects" class="tabcontent">
-        <p>
-            Robots!
-        </p>
-        <iframe src="https://drive.google.com/file/d/102PaQzQsnxAH55n6oIfgLF45GRol4VOf/preview" width="640" height="480"></iframe>
-        <iframe src="https://drive.google.com/file/d/1w1JsWZXFingSsP3y-NNNEhp6B1vSpJNv/preview" width="640" height="480"></iframe>
-    </div>
-    <div id="Interests" class="tabcontent">
-        <p>
-            Sports, Travel, Coding.
-        </p>
-    </div>
-    <script>
-        document.getElementById("defaultOpen").click();
-        
-        function opentab(evt, TabName) {
-          var i, tabcontent, tablinks;
-          tabcontent = document.getElementsByClassName("tabcontent");
-          for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-          }
-          tablinks = document.getElementsByClassName("tablinks");
-          for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-          }
-          document.getElementById(TabName).style.display = "block";
-          evt.currentTarget.className += " active";
-        }
-        </script>
+    <main>
+        <div id="SidenavBar" class="Sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Homepage</a>
+            <a href="aboutMe.html">About Me</a>
+            <a href="PastProjects.html">Past Projects</a>
+            <a href="Games.html">Games</a>
+        </div>
+        <span class="OpenSidebar" onclick="openNav()">&#9776;</span>
+        <h1>James Wheadon</h1>
+        <h3>Trainee full-stack software developer</h3>
+        <p>Hi, I'm James, training to become a full-stack developer with Futureproof. This course has strengthened my knowledge of languages, as well as introducing me to new languages and software. My previous education and experience has made me a clear communicator, able to explain concepts and my thinking to university professors or how to stay safe while climbing to a 6 year old.</p>
+        <p>I'm a natural problem solver with a very logical mind, which allows me to break a problem down into its constituent parts and see how they all interconnect in the big picture. I have a competitive attitude and love solving a puzzle, and want to see every idea I have through to completion.</p>
+        <img src="./images/headshot.JPG" id="headshot"/>
+        <h4>Languages and software used</h4>
+        <div id="skills">
+            <ul>
+                <li>Git</li>
+                <li>Github</li>
+                <li>Node.js</li>
+                <li>Jest</li>
+                <li>PostgreSQL</li>
+                <li>MongoDB</li>
+            </ul>
+            <ul>
+                <li>Python 3</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Javascript</li>
+                <li>Java</li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="#">Homepage</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="PastProjects.html">Past Projects</a></li>
+            <li><a href="Games.html">Games</a></li>
+        </ul>
+        <h4>Contact me</h4>
+        <ul>
+            <li><a href="mailto:james.wheadon@yahoo.com">Email</a></li>
+            <li><a href="https://github.com/JamesWheadon">GitHub</a></li>
+            <li><a href="https://uk.linkedin.com/in/james-wheadon-595a4a20b?trk=people-guest_people_search-card">LinkedIn</a></li>
+        </ul>
+    </footer>
 </body>

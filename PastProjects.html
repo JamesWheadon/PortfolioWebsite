@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Past Projects</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="ProjectGrid.css" rel="stylesheet" type="text/css" />
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div id="SidenavBar" class="Sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Homepage</a>
+        <a href="aboutMe.html">About Me</a>
+        <a href="#">Past Projects</a>
+        <a href="games.html">Games</a>
+    </div>
+    <span class="OpenSidebar" onclick="openNav()">&#9776;</span>
+    <h1 style="color: black;">Past Projects</h1>
+    <h4>Studying engineering at university gave me the opportunity to apply theory from lectures in practical projects. Below are a few of my favourites that I carried out at university, some with the resources available to apply the project to hardware and see them work in the real world. I always like to throw myself into a project, some of my personal projects and projects completed with Futureproof are listed below.</h4>
+    <section id="ProjectsContainer">
+        <h2 id="FootballerTitle" class="title">
+            Self-Balancing Footballer
+        </h2>
+        <p id="FootballerSummary" class="summary">
+            A week-long project to make a controllable football player using lego mindstorms components, as well as MATLAB and Simulink to handle the control elements of the problem. The control system would stabilise the robot allowing it to balance on 2 wheels while being controlled to make it move forward and backwards, turn and kick a football.
+        </p>
+        <iframe id="FootballerMedia" class="media" src="https://drive.google.com/file/d/1w1JsWZXFingSsP3y-NNNEhp6B1vSpJNv/preview"></iframe>
+        <h2 id="LineBotTitle" class="title">
+            Line Following Robot
+        </h2>
+        <p id="LineBotSummary" class="summary">
+            Coding a line-following robot from scratch, given the documentation for the microcontroller of the robot and information about the other hardware like the camera, the robot was programmed to follow black lines and make decisions at junctions to navigate a simple environment.
+        </p>
+        <iframe id="LineBotMedia" class="media" src="https://drive.google.com/file/d/102PaQzQsnxAH55n6oIfgLF45GRol4VOf/preview" width="640" height="360"></iframe>
+        <h2 id="FourYPTitle" class="title">
+            Multi-Agent Path Finding AI
+        </h2>
+        <p id="FourYPSummary" class="summary">
+            Implemented and developed multi-agent path finding artificial intelligences to plan paths for multiple robots in the same environment. The final algorithm found paths for non-holonomic heterogeneous robots with inertial constraints in continuous time, using a discrete representation of an environment that multiple robots are navigating simultaneously. The final algorithm was succesful in testing against leading methods and provably optimal in certain scenarios.
+        </p>
+        <iframe id="FourYPMedia" class="media" src="https://drive.google.com/file/d/1FSLgoxi2lliDBROnGHJbyYaozYoX7FyQ/preview" width="640" height="360"></iframe>
+    </section>
+    <br>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-4 card">
+                    <img src="./images/machineLearning.png" class="card-img-top" alt="Machine Learning">
+                    <div class="card-body">
+                      <p class="card-text">Built a linear-regression machine learning model, looking at optimization methods to improve the results.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 card">
+                    <img src="./images/bicycle.png" class="card-img-top" alt="Bicycle">
+                    <div class="card-body">
+                      <p class="card-text">I used python, HTML, CSS and Javascript to create prospectuses for a cycle touring company, have a look at an example <a href="https://www.bikexplore.co.uk/Abroad/Normandy-Chateau-2021" target="_blank">here</a>, or try <a href="https://bikexplore.netlify.app/" target="_blank">creating your own</a>.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 card">
+                    <img src="./images/knight.png" class="card-img-top" alt="Knight chess piece">
+                    <div class="card-body">
+                      <p class="card-text">I wanted to learn a statically typed object orientated language, so created chess in Java. This was made using basic functionality <a href="https://github.com/psoder3/Program-Your-Own-Chess" target="_blank">found here</a>.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 card">
+                    <img src="./images/journal.png" class="card-img-top" alt="Journal">
+                    <div class="card-body">
+                      <p class="card-text">Created an anonymous journalling website in lap 1 of the Futureproof course. Users of the website were able to anonymously make posts or leave comments and reactions to other people's posts.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 card">
+                    <img src="./images/calendar.png" class="card-img-top" alt="Calendar">
+                    <div class="card-body">
+                      <p class="card-text">Created a habit-tracking website in lap 2 of the Futureproof course. Users could register or log in and then track their coding, water intake and sleep. It can be found <a href="https://drink-sleep-code-repeat.netlify.app/" target="_blank">here</a>.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 card">
+                    <img src="./images/react.png" class="card-img-top" alt="React logo">
+                    <div class="card-body">
+                      <p class="card-text">Worked with 2 other students on the Futureproof course to make a website for a band using react, which is deployed <a href="https://idles-band.netlify.app/">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+          </div>
+    </section>
+    <footer>
+        <h4>Links</h4>
+        <ul>
+            <li><a href="index.html">Homepage</a></li>
+            <li><a href="aboutMe.html">About Me</a></li>
+            <li><a href="#">Past Projects</a></li>
+            <li><a href="Games.html">Games</a></li>
+        </ul>
+        <h4>Contact me</h4>
+        <ul>
+            <li><a href="mailto:james.wheadon@yahoo.com">Email</a></li>
+            <li><a href="https://github.com/JamesWheadon">GitHub</a></li>
+            <li><a href="https://uk.linkedin.com/in/james-wheadon-595a4a20b?trk=people-guest_people_search-card">LinkedIn</a></li>
+        </ul>
+    </footer>
+</body>

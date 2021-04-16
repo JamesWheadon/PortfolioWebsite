@@ -1,0 +1,22 @@
+{
+  "name": "portfoliowebsite",
+  "version": "1.0.0",
+  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/99106050-c88c-420a-b17b-9d20fac16bc1/deploy-status)](https://app.netlify.com/sites/jameswheadonportfolio/deploys)",
+  "main": "hangman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JamesWheadon/PortfolioWebsite.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JamesWheadon/PortfolioWebsite/issues"
+  },
+  "homepage": "https://github.com/JamesWheadon/PortfolioWebsite#readme",
+  "dependencies": {
+    "node-fetch": "^2.6.1"
+  }
+}

@@ -1,0 +1,443 @@
+:root {
+    --frameColour: rgb(136, 72, 0);
+    --ropeColour: rgb(255, 187, 0);
+    --personColour: rgb(0, 0, 0);
+    --backgroundColour: rgb(95, 75, 48);
+    --leftAlignGame: calc((var(--bodyWidth) - 500px) / 2);
+    --scale: 1;
+}
+
+main {
+    position: relative;
+    height: 1350px;
+    margin: auto;
+    padding-bottom: 50px;
+}
+
+#snake {
+    position: absolute;
+    height: 600px;
+    width: 500px;
+    top: 700px;
+    left: var(--leftAlignGame);
+}
+
+#snakeHeader {
+    position: absolute;
+    top: 0px;
+    height: 100px;
+    width: 100%;
+    background-color: rgb(170, 170, 170);
+}
+
+#snakeHeader h2 {
+    text-align: center;
+    margin: 0px;
+}
+
+#snakeScores {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0px;
+}
+
+#snakeScores h4 {
+    text-align: center;
+    width: 40%;
+    display: inline;
+    margin: 10px 0px;
+}
+
+#snakeScores button {
+    width: 20%;
+    text-align: center;
+}
+
+#snakeGame {
+    position: absolute;
+    top: 90px;
+    height: 500px;
+    width: 500px;
+    background-color: var(--backgroundColour);
+}
+
+#hangman {
+    position: absolute;
+    top: 50px;
+    left: var(--leftAlignGame);
+    height: 600px;
+    width: 500px;
+}
+
+#hangmanCover {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    top: 50px;
+    left: var(--leftAlignGame);
+    height: 600px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#hangmanBase {
+    position: absolute;
+    display: none;
+    top: calc(450px * var(--scale));
+    left: calc(50px * var(--scale));
+    width: calc(300px * var(--scale));
+    height: calc(20px * var(--scale));
+    background-color: var(--frameColour);
+}
+
+#hangmanStand {
+    position: absolute;
+    display: none;
+    top: calc(50px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(20px * var(--scale));
+    height: calc(400px * var(--scale));
+    background-color: var(--frameColour);
+}
+
+#hangmanFrame {
+    display: none;
+}
+
+#hangmanCross {
+    position: absolute;
+    top: calc(50px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(300px * var(--scale));
+    height: calc(20px * var(--scale));
+    background-color: var(--frameColour);
+}
+
+#hangmanBrace {
+    position: absolute;
+    top: calc(75px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(75px * var(--scale));
+    height: calc(20px * var(--scale));
+    transform: rotate(-45deg);
+    background-color: var(--frameColour);
+}
+
+#hangmanAni {
+    position: absolute;
+    top: calc(50px * var(--scale));
+    left: calc(300px * var(--scale));
+    transform-origin: top center;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    height: calc(400px * var(--scale));
+    width: calc(150px * var(--scale));
+}
+
+@keyframes hangmanRotate {
+    0%   {transform: rotate(0deg);}
+    12.5%  {transform: rotate(5deg);}
+    37.5%  {transform: rotate(-5deg);}
+    62.5%  {transform: rotate(5deg);}
+    87.5%  {transform: rotate(-5deg);}
+    100% {transform: rotate(0deg);}
+}
+
+@keyframes hangmanCelebrate {
+    0%   {left: calc(300px * var(--scale)); top: calc(50px * var(--scale));}
+    20%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    30%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    40%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    50%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    60%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    70%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    80%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+    90%  {left: calc(175px * var(--scale)); top: calc(36.5px * var(--scale));}
+    100%  {left: calc(175px * var(--scale)); top: calc(111.5px * var(--scale));}
+}
+
+#hangmanNoose {
+    position: absolute;
+    display: none;
+    top: 0px;
+    left: calc(75px * var(--scale));
+    width: calc(10px * var(--scale));
+    height: calc(50px * var(--scale));
+    background-color: var(--ropeColour);
+}
+
+#hangmanHead {
+    display: none;
+}
+
+#hangmanOuterHead {
+    position: absolute;
+    top: calc(50px * var(--scale));
+    left: calc(45px * var(--scale));
+    width: calc(70px * var(--scale));
+    height: calc(70px * var(--scale));
+    border-radius: 50%;
+    background-color: var(--personColour);
+}
+
+#hangmanInnerHead {
+    position: absolute;
+    top: calc(60px * var(--scale));
+    left: calc(55px * var(--scale));
+    width: calc(50px * var(--scale));
+    height: calc(50px * var(--scale));
+    border-radius: 50%;
+    background-color: white;
+}
+
+#hangmanBody {
+    position: absolute;
+    display: none;
+    top: calc(115px * var(--scale));
+    left: calc(70px * var(--scale));
+    width: calc(20px * var(--scale));
+    height: calc(130px * var(--scale));
+    background-color: var(--personColour);
+}
+
+#hangmanArms {
+    display: none;
+}
+
+#leftArm {
+    position: absolute;
+    top: calc(130px * var(--scale));
+    left: calc(70px * var(--scale));
+    width: calc(10px * var(--scale));
+    height: calc(90px * var(--scale));
+    transform: rotate(30deg);
+    background-color: var(--personColour);
+    transform-origin: top center;
+    animation-duration: calc(6.4s / 3);
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    animation-delay: 1.6s;
+}
+
+#rightArm {
+    position: absolute;
+    top: calc(130px * var(--scale));
+    left: calc(80px * var(--scale));
+    width: calc(10px * var(--scale));
+    height: calc(90px * var(--scale));
+    transform: rotate(-30deg);
+    background-color: var(--personColour);
+    transform-origin: top center;
+    animation-duration: calc(6.4s / 3);
+    animation-iteration-count: 3;
+    animation-timing-function: cubic-bezier(0.3642, 0, 0.6358, 1);
+    animation-delay: 1.6s;
+}
+
+@keyframes leftArmCelebrate {
+    0%   {transform: rotate(30deg);}
+    50%  {transform: rotate(150deg);}
+    100% {transform: rotate(30deg);}
+}
+
+@keyframes rightArmCelebrate {
+    0%   {transform: rotate(-30deg);}
+    50%  {transform: rotate(-150deg);}
+    100% {transform: rotate(-30deg);}
+}
+
+#hangmanLegs {
+    display: none;
+}
+
+#leftLeg {
+    position: absolute;
+    top: calc(230px * var(--scale));
+    left: calc(45px * var(--scale));
+    width: calc(15px * var(--scale));
+    height: calc(120px * var(--scale));
+    transform: rotate(30deg);
+    background-color: var(--personColour);
+}
+
+#rightLeg {
+    position: absolute;
+    top: calc(230px * var(--scale));
+    left: calc(100px * var(--scale));
+    width: calc(15px * var(--scale));
+    height: calc(120px * var(--scale));
+    transform: rotate(-30deg);
+    background-color: var(--personColour);
+}
+
+#hangmanInput {
+    position: absolute;
+    bottom: 20px;
+    left: 168px;
+}
+
+#hangmanGuess {
+    width: 50px;
+    text-align: center;
+}
+
+#hangmanBlanks {
+    position: absolute;
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+}
+
+#wrongGuesses {
+    position: absolute;
+    bottom: 80px;
+    text-align: center;
+    width: 100%;
+}
+
+.wrongGuess {
+    text-decoration: line-through;
+}
+
+#hangmanMessage {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.playAgain {
+    background-color: rgb(170, 170, 170);
+    color: white;
+    font-size: 20px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 0;
+    text-align: center;
+}
+
+.playAgain:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+@media only screen and (max-width: 540px) {
+    :root {
+        --scale: 0.8;
+        --leftAlignGame: calc((var(--bodyWidth) - 400px) / 2);
+    }
+
+    main {
+        height: 1150px;
+    }
+
+    #snake {
+        height: 500px;
+        width: 400px;
+        top: 600px;
+    }
+
+    #snakeGame {
+        height: 400px;
+        width: 400px;
+    }
+
+    #hangman {
+        height: 500px;
+        width: 400px;
+    }
+    
+    #hangmanCover {
+        height: 500px;
+        width: 400px;
+    }
+
+    #hangmanInput {
+        left: 118px;
+    }
+
+    #snakeScores h4 {
+        font-size: 16px;
+    }
+    
+    #snakeScores button {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    :root {
+        --scale: 0.6;
+        --leftAlignGame: calc((var(--bodyWidth) - 300px) / 2);
+    }
+
+    main {
+        height: 950px;
+    }
+
+    #snake {
+        height: 400px;
+        width: 300px;
+        top: 500px;
+    }
+    
+    #snakeGame {
+        height: 300px;
+        width: 300px;
+    }
+
+    #hangman {
+        height: 400px;
+        width: 300px;
+    }
+    
+    #hangmanCover {
+        height: 400px;
+        width: 300px;
+    }
+
+    #hangmanInput {
+        left: 68px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    :root {
+        --scale: 0.48;
+        --leftAlignGame: calc((var(--bodyWidth) - 240px) / 2);
+    }
+
+    main {
+        height: 830px;
+    }
+
+    #snake {
+        height: 340px;
+        width: 240px;
+        top: 440px;
+    }
+    
+    #snakeGame {
+        height: 240px;
+        width: 240px;
+    }
+
+    #hangman {
+        height: 340px;
+        width: 240px;
+    }
+    
+    #hangmanCover {
+        height: 340px;
+        width: 240px;
+    }
+
+    #hangmanInput {
+        left: 38px;
+    }
+}
