@@ -58,6 +58,12 @@ h1 {
 
 .mySlides + .mySlides { opacity: 0; }
 
+#homepageName {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .slideshowContainer {
   width: var(--bodyWidth);
   background-color: var(--BackgroundColour);
@@ -115,8 +121,6 @@ h2 {
 #headshot {
   width: 200px;
   height: 200px;
-  display: block;
-  margin: auto;
   border-radius: 10px;
 }
 
