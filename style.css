@@ -11,6 +11,11 @@
   --bodyWidth: 1200px;
 }
 
+* {
+  box-sizing: border-box;
+  line-height: normal;
+}
+
 html {
   height: auto;
   margin: 0px;
@@ -42,10 +47,6 @@ h1 {
   color: var(--NameColour);
   font-family: 'Nanum Gothic', sans-serif;
   margin-top: 0px;
-}
-
-* {
-  box-sizing: border-box;
 }
 
 .mySlides {
@@ -165,10 +166,6 @@ footer ul li a {
 #aboutMe h1 {
   margin-top: 0px;
   margin-bottom: 10px;
-}
-
-#aboutMe p {
-  text-align: justify;
 }
 
 #turtle {
