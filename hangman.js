@@ -29,12 +29,12 @@ function playHangman() {
     guessWord.then(generatedWord => {
         word = generatedWord;
         hangmanClue();
-        guessInput.addEventListener('keyup', letterGuess);
+        guessInput.addEventListener('input', letterGuess);
     })
 }
 
 function letterGuess(event) {
-    document.getElementById('hangmanBlanks').textContent = event.code;
+    document.getElementById('hangmanBlanks').textContent = event.target.value;
     guessInput.value = "";
     guess = event.key.toLowerCase();
     if (alphabet.includes(guess) && !guessedLetters.includes(guess)) {
