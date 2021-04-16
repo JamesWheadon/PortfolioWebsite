@@ -34,6 +34,7 @@ function playHangman() {
 }
 
 function letterGuess(event) {
+    document.querySelector('body').style.backgroundColor = "black";
     guessInput.value = "";
     guess = event.key.toLowerCase();
     if (alphabet.includes(guess) && !guessedLetters.includes(guess)) {

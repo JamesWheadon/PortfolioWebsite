@@ -78,6 +78,7 @@ function startInterval() {
         if(snakeHeadX >= gameBoard.width || snakeHeadX < 0 || snakeHeadY >= gameBoard.height || snakeHeadY < 0)
         {
             clearInterval(gameInterval);
+            document.getElementById("playPause").textContent = "Play";
             playing = false;
         }
         drawSnake();
@@ -177,6 +178,7 @@ function yummyTail() {
         if (item.x === snakeHeadX && item.y === snakeHeadY) {
             clearInterval(gameInterval);
             playing = false;
+            document.getElementById("playPause").textContent = "Play";
         }
     })
 }
