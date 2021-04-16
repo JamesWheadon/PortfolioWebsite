@@ -34,9 +34,8 @@ function playHangman() {
 }
 
 function letterGuess(event) {
-    document.getElementById('hangmanBlanks').textContent = event.target.value;
     guessInput.value = "";
-    guess = event.key.toLowerCase();
+    guess = event.target.value.toLowerCase();
     if (alphabet.includes(guess) && !guessedLetters.includes(guess)) {
         guessedLetters.push(guess);
         if (word.includes(guess)) {
