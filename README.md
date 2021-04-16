@@ -3,3 +3,6 @@
 ## My Portfolio
 
 A repository for the code for my portfolio website, [hosted on netlify here](https://jameswheadon.netlify.app/index.html).
+
+### Bugs
+[ ] Sometimes the snake drawing adds a little extra section.
